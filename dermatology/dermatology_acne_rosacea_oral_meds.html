@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ざ瘡・酒皶の内服薬まとめ</title>
+  <style>
+    :root {
+      --bg: #f7f8fb;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --line: #d9dee8;
+      --main: #b45309;
+      --main2: #f59e0b;
+      --sub: #fffbeb;
+      --danger: #fef2f2;
+      --danger-line: #fecaca;
+      --warn: #fff7ed;
+      --warn-line: #fed7aa;
+      --ok: #f0fdf4;
+      --ok-line: #bbf7d0;
+      --blue: #eff6ff;
+      --blue-line: #bfdbfe;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Sans", "Yu Gothic", "Meiryo", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.75;
+    }
+
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 32px 20px 56px;
+    }
+
+    header {
+      background: linear-gradient(135deg, #92400e, #f59e0b);
+      color: #fff;
+      padding: 32px;
+      border-radius: 18px;
+      margin-bottom: 28px;
+      box-shadow: 0 10px 24px rgba(180, 83, 9, 0.18);
+    }
+
+    header h1 {
+      margin: 0 0 12px;
+      font-size: 30px;
+      line-height: 1.35;
+    }
+
+    header p {
+      margin: 0;
+      opacity: 0.96;
+      font-size: 15px;
+    }
+
+    section {
+      background: var(--card);
+      margin: 22px 0;
+      padding: 26px;
+      border-radius: 16px;
+      box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+    }
+
+    h2 {
+      font-size: 23px;
+      margin: 0 0 16px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--line);
+    }
+
+    h3 {
+      font-size: 18px;
+      margin-top: 24px;
+      margin-bottom: 10px;
+      color: #111827;
+    }
+
+    p {
+      margin: 10px 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0 22px;
+      font-size: 14px;
+      background: #fff;
+    }
+
+    th, td {
+      border: 1px solid var(--line);
+      padding: 10px 12px;
+      vertical-align: top;
+    }
+
+    th {
+      background: #f8fafc;
+      font-weight: 700;
+      text-align: left;
+      white-space: nowrap;
+    }
+
+    tr:nth-child(even) td {
+      background: #fafafa;
+    }
+
+    ul {
+      margin: 8px 0 16px 1.3em;
+      padding: 0;
+    }
+
+    li {
+      margin: 4px 0;
+    }
+
+    .note {
+      background: var(--sub);
+      border-left: 5px solid var(--main2);
+      padding: 16px 18px;
+      border-radius: 10px;
+      margin: 20px 0;
+    }
+
+    .warning {
+      background: var(--warn);
+      border: 1px solid var(--warn-line);
+      padding: 16px 18px;
+      border-radius: 10px;
+      margin: 20px 0;
+    }
+
+    .danger {
+      background: var(--danger);
+      border: 1px solid var(--danger-line);
+      padding: 16px 18px;
+      border-radius: 10px;
+      margin: 20px 0;
+    }
+
+    .ok {
+      background: var(--ok);
+      border: 1px solid var(--ok-line);
+      padding: 16px 18px;
+      border-radius: 10px;
+      margin: 20px 0;
+    }
+
+    .blue {
+      background: var(--blue);
+      border: 1px solid var(--blue-line);
+      padding: 16px 18px;
+      border-radius: 10px;
+      margin: 20px 0;
+    }
+
+    .template {
+      background: #f8fafc;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 16px 18px;
+      margin: 14px 0;
+    }
+
+    .tag {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+      color: #92400e;
+      background: #fef3c7;
+      padding: 2px 8px;
+      border-radius: 999px;
+      margin-right: 6px;
+      margin-bottom: 4px;
+    }
+
+    .small {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .footer {
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 28px;
+    }
+
+    a {
+      color: #1d4ed8;
+      word-break: break-all;
+    }
+
+    @media print {
+      body {
+        background: #fff;
+      }
+      .container {
+        max-width: none;
+        padding: 0;
+      }
+      header, section {
+        box-shadow: none;
+      }
+      section {
+        page-break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>ざ瘡・酒皶の内服薬まとめ</h1>
+      <p>皮膚科門前薬局向け：尋常性痤瘡・酒皶で処方される内服薬の特徴、服薬指導、注意点、疑義照会ポイントを整理。</p>
+    </header>
+
+    <div class="note">
+      <strong>基本方針：</strong>
+      ざ瘡・酒皶の内服薬は、主に炎症性皮疹や丘疹膿疱型酒皶に対する抗菌薬が中心。
+      外用薬が治療の軸になる場面も多いため、内服薬だけでなく、外用継続・耐性菌対策・漫然投与回避をセットで説明する。
+    </div>
+
+    <section>
+      <h2>1. 対象疾患と内服薬の位置づけ</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>疾患</th>
+            <th>主な症状</th>
+            <th>内服薬の位置づけ</th>
+            <th>薬局での確認点</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>尋常性痤瘡</td>
+            <td>面皰、丘疹、膿疱、結節、嚢腫</td>
+            <td>炎症性皮疹が中等症以上の場合に内服抗菌薬が使われることが多い。</td>
+            <td>妊娠可能性、年齢、服用期間、外用薬併用、胃腸障害、光線過敏、めまい。</td>
+          </tr>
+          <tr>
+            <td>酒皶</td>
+            <td>紅斑、毛細血管拡張、丘疹、膿疱、ほてり、刺激感</td>
+            <td>丘疹膿疱型では内服抗菌薬が使われることがある。外用メトロニダゾールなどと併用されることもある。</td>
+            <td>刺激因子、飲酒・香辛料・温熱、日光、外用薬の刺激、長期投与の有無。</td>
+          </tr>
+          <tr>
+            <td>重症・難治性ざ瘡</td>
+            <td>結節、嚢腫、瘢痕リスク、集簇性痤瘡</td>
+            <td>国内保険診療では抗菌薬・外用薬が中心。自由診療でイソトレチノインが話題になることがある。</td>
+            <td>未承認薬・個人輸入薬の有無、妊娠関連リスク、重症度、専門医管理の有無。</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="blue">
+        <strong>実務の見方：</strong>
+        ざ瘡で内服抗菌薬が出た場合、「今ある炎症を落ち着かせる短期〜中期の治療」と考える。
+        維持療法はアダパレン、過酸化ベンゾイル、配合外用薬などが軸になりやすい。
+      </div>
+    </section>
+
+    <section>
+      <h2>2. 主な内服薬一覧</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>分類</th>
+            <th>代表商品名</th>
+            <th>成分名</th>
+            <th>主な用途</th>
+            <th>特徴</th>
+            <th>薬局での注意点</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>テトラサイクリン系</td>
+            <td>ミノマイシン、後発品</td>
+            <td>ミノサイクリン</td>
+            <td>炎症性ざ瘡、酒皶様皮疹など</td>
+            <td>皮膚科で古くから頻用。抗炎症作用も期待される。</td>
+            <td>めまい、色素沈着、肝障害、薬疹、自己免疫性副作用、妊婦・小児に注意。</td>
+          </tr>
+          <tr>
+            <td>テトラサイクリン系</td>
+            <td>ビブラマイシン</td>
+            <td>ドキシサイクリン</td>
+            <td>炎症性ざ瘡、酒皶など</td>
+            <td>ミノサイクリンよりめまいは少なめとされる。海外では酒皶治療でもよく使われる。</td>
+            <td>光線過敏、食道炎、胃部不快感、妊婦・小児に注意。</td>
+          </tr>
+          <tr>
+            <td>マクロライド系</td>
+            <td>ルリッド、後発品</td>
+            <td>ロキシスロマイシン</td>
+            <td>ざ瘡、皮膚感染症など</td>
+            <td>テトラサイクリン系が使いにくい場合の選択肢。</td>
+            <td>相互作用、肝機能、下痢、耐性菌に注意。</td>
+          </tr>
+          <tr>
+            <td>マクロライド系</td>
+            <td>クラリス、クラリシッド</td>
+            <td>クラリスロマイシン</td>
+            <td>ざ瘡で使われることがある</td>
+            <td>CYP3A4阻害があり、相互作用に注意。</td>
+            <td>睡眠薬、抗凝固薬、Ca拮抗薬、スタチンなどの併用確認。</td>
+          </tr>
+          <tr>
+            <td>ペネム系</td>
+            <td>ファロム</td>
+            <td>ファロペネム</td>
+            <td>ざ瘡、二次感染、皮膚感染症など</td>
+            <td>広域の経口抗菌薬。皮膚科で使われることがある。</td>
+            <td>下痢、耐性菌、長期漫然投与回避。ペニシリン・セフェムアレルギー歴確認。</td>
+          </tr>
+          <tr>
+            <td>漢方薬</td>
+            <td>十味敗毒湯、荊芥連翹湯、清上防風湯など</td>
+            <td>漢方製剤</td>
+            <td>ざ瘡、慢性炎症、体質改善目的</td>
+            <td>抗菌薬の代替・補助として処方されることがある。</td>
+            <td>甘草含有による偽アルドステロン症、胃腸症状、服薬継続性。</td>
+          </tr>
+          <tr>
+            <td>自由診療・未承認関連</td>
+            <td>アキュテイン等として流通することがある</td>
+            <td>イソトレチノイン</td>
+            <td>重症・難治性ざ瘡</td>
+            <td>海外では重症ざ瘡に用いられるが、日本では未承認。</td>
+            <td>催奇形性が極めて重要。個人輸入・自己判断使用に注意。</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>3. 内服抗菌薬を使う場面</h2>
+      <p>内服抗菌薬は、面皰だけの軽症ざ瘡ではなく、赤い丘疹や膿疱が目立つ炎症性ざ瘡で処方されることが多い。中等症以上、急に悪化した症例、瘢痕リスクがある症例では内服抗菌薬が選択されやすい。</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>状況</th>
+            <th>内服薬の考え方</th>
+            <th>服薬指導の要点</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>炎症性皮疹が多い</td>
+            <td>テトラサイクリン系などの内服抗菌薬を短期〜中期で使用。</td>
+            <td>赤み・膿疱を落ち着かせる薬。外用薬も継続する。</td>
+          </tr>
+          <tr>
+            <td>外用だけで不十分</td>
+            <td>外用薬に内服薬を追加する。</td>
+            <td>内服だけで治すのではなく、外用の継続が再発予防に重要。</td>
+          </tr>
+          <tr>
+            <td>酒皶の丘疹・膿疱</td>
+            <td>テトラサイクリン系やマクロライド系が処方されることがある。</td>
+            <td>日光、飲酒、辛いもの、温熱刺激など悪化因子も確認。</td>
+          </tr>
+          <tr>
+            <td>長期処方が続いている</td>
+            <td>漫然投与になっていないか確認。</td>
+            <td>効果、残薬、外用薬使用状況、副作用を確認し、必要時は処方医へ情報提供。</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="warning">
+        <strong>耐性菌対策：</strong>
+        内服抗菌薬は「効くからずっと飲む薬」ではない。
+        長期漫然使用を避け、外用薬による維持療法へ移行する意図があるか確認する。
+      </div>
+    </section>
+
+    <section>
+      <h2>4. ミノサイクリン：ミノマイシンなど</h2>
+      <p>ミノサイクリンは、皮膚科でざ瘡に古くから使われてきたテトラサイクリン系抗菌薬。抗菌作用に加え、炎症を抑える目的でも使われる。</p>
+
+      <table>
+        <tbody>
+          <tr>
+            <th>分類</th>
+            <td>テトラサイクリン系抗菌薬</td>
+          </tr>
+          <tr>
+            <th>主な用途</th>
+            <td>炎症性ざ瘡、酒皶様皮疹、皮膚感染症など</td>
+          </tr>
+          <tr>
+            <th>特徴</th>
+            <td>皮膚科で使用経験が多い。効果を実感しやすい患者もいる。</td>
+          </tr>
+          <tr>
+            <th>主な副作用</th>
+            <td>めまい、ふらつき、色素沈着、肝障害、薬疹、発熱、自己免疫性肝炎様症状、薬剤性過敏症症候群など</td>
+          </tr>
+          <tr>
+            <th>注意する患者</th>
+            <td>妊婦、妊娠可能性のある患者、小児、肝障害、めまいが困る職業、運転者</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="danger">
+        <strong>ミノサイクリンの重要ポイント：</strong>
+        「めまい・ふらつき」と「色素沈着」は皮膚科門前で必ず説明したい。
+        発疹、発熱、強い倦怠感、黄疸、息苦しさなどがあれば早めに受診。
+      </div>
+
+      <div class="template">
+        <strong>指導例：</strong><br>
+        「この薬は赤く腫れたニキビの炎症を抑える目的で使います。飲み始めにめまいやふらつきが出ることがあります。車の運転や危険な作業がある場合は、最初の反応を確認してください。発疹、発熱、強いだるさ、皮膚や白目が黄色いなどがあれば早めに連絡してください。」
+      </div>
+    </section>
+
+    <section>
+      <h2>5. ドキシサイクリン：ビブラマイシン</h2>
+      <p>ドキシサイクリンはテトラサイクリン系抗菌薬。ざ瘡や酒皶で使われることがあり、ミノサイクリンに比べてめまいは少なめとされる一方、光線過敏や食道炎に注意する。</p>
+
+      <table>
+        <tbody>
+          <tr>
+            <th>分類</th>
+            <td>テトラサイクリン系抗菌薬</td>
+          </tr>
+          <tr>
+            <th>主な用途</th>
+            <td>炎症性ざ瘡、酒皶、その他感染症</td>
+          </tr>
+          <tr>
+            <th>特徴</th>
+            <td>抗菌作用と抗炎症作用を期待して使用される。</td>
+          </tr>
+          <tr>
+            <th>主な副作用</th>
+            <td>胃部不快感、悪心、下痢、光線過敏、食道炎、薬疹</td>
+          </tr>
+          <tr>
+            <th>服薬指導</th>
+            <td>多めの水で服用。服用後すぐ横にならない。強い日差し・日焼けに注意。</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="warning">
+        <strong>食道炎予防：</strong>
+        寝る直前の服用、少量の水での服用、服用直後に横になる行動は避ける。
+      </div>
+
+      <div class="template">
+        <strong>指導例：</strong><br>
+        「食道に引っかかると胸やけや痛みが出ることがあるので、コップ1杯程度の水で飲み、飲んだ後すぐ横にならないでください。日光で皮膚が赤くなりやすくなることがあるため、日焼けにも注意してください。」
+      </div>
+    </section>
+
+    <section>
+      <h2>6. ロキシスロマイシン・クラリスロマイシンなど</h2>
+      <p>マクロライド系抗菌薬は、テトラサイクリン系が使いにくい場合や、医師の判断でざ瘡・酒皶に処方されることがある。</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>薬剤</th>
+            <th>特徴</th>
+            <th>注意点</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>ロキシスロマイシン</td>
+            <td>ざ瘡で処方されることがある。比較的扱いやすい。</td>
+            <td>下痢、肝機能、相互作用、耐性菌に注意。</td>
+          </tr>
+          <tr>
+            <td>クラリスロマイシン</td>
+            <td>幅広い感染症で使われる。ざ瘡に使われることもある。</td>
+            <td>CYP3A4阻害による相互作用が重要。併用薬確認が必要。</td>
+          </tr>
+          <tr>
+            <td>アジスロマイシン</td>
+            <td>処方日数が短いことが多い。皮膚科では限定的。</td>
+            <td>下痢、QT延長、併用薬に注意。</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="blue">
+        <strong>確認ポイント：</strong>
+        クラリスロマイシンでは、睡眠薬、抗凝固薬、抗不整脈薬、Ca拮抗薬、スタチン、抗てんかん薬などを確認する。
+        ロキシスロマイシンでも相互作用ゼロではないため、他科薬確認は省略しない。
+      </div>
+    </section>
+
+    <section>
+      <h2>7. ファロペネム：ファロム</h2>
+      <p>ファロペネムはペネム系の経口抗菌薬。皮膚感染症やざ瘡で処方されることがあるが、広域抗菌薬であるため、漫然使用には注意する。</p>
+
+      <table>
+        <tbody>
+          <tr>
+            <th>分類</th>
+            <td>ペネム系経口抗菌薬</td>
+          </tr>
+          <tr>
+            <th>主な用途</th>
+            <td>皮膚感染症、ざ瘡、二次感染など</td>
+          </tr>
+          <tr>
+            <th>特徴</th>
+            <td>広範囲の細菌に作用する経口抗菌薬。</td>
+          </tr>
+          <tr>
+            <th>主な副作用</th>
+            <td>下痢、軟便、腹部不快感、発疹、アレルギー症状など</td>
+          </tr>
+          <tr>
+            <th>確認事項</th>
+            <td>ペニシリン・セフェム系アレルギー歴、下痢、抗菌薬使用歴、長期投与の有無</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="warning">
+        <strong>薬局での見方：</strong>
+        ファロペネムがざ瘡で長く続く場合は、治療目的、効果、外用薬併用、耐性菌対策の観点から確認する。
+      </div>
+    </section>
+
+    <section>
+      <h2>8. 漢方薬</h2>
+      <p>ざ瘡では、抗菌薬の代替・補助、慢性炎症、体質傾向を意識して漢方薬が処方されることがある。即効性よりも継続評価が必要。</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>代表処方</th>
+            <th>使われやすい場面</th>
+            <th>薬局での注意点</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>十味敗毒湯</td>
+            <td>化膿傾向、炎症性ざ瘡、湿疹傾向など</td>
+            <td>甘草含有製剤では偽アルドステロン症に注意。浮腫、血圧上昇、脱力感を確認。</td>
+          </tr>
+          <tr>
+            <td>清上防風湯</td>
+            <td>顔面の炎症、赤み、膿疱を伴うざ瘡など</td>
+            <td>胃腸障害、甘草関連副作用、服薬回数の継続性。</td>
+          </tr>
+          <tr>
+            <td>荊芥連翹湯</td>
+            <td>慢性的な炎症、蓄膿・扁桃炎傾向を伴うざ瘡など</td>
+            <td>長期服用時の副作用、他の漢方との重複、甘草量確認。</td>
+          </tr>
+          <tr>
+            <td>桂枝茯苓丸加薏苡仁</td>
+            <td>月経周期に関連するざ瘡、瘀血傾向など</td>
+            <td>妊娠可能性、胃腸症状、月経関連症状の聞き取り。</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="ok">
+        <strong>漢方の実務ポイント：</strong>
+        「ニキビの漢方」は複数処方されやすい。甘草含有量、他院・市販漢方との重複、服薬継続できているかを確認する。
+      </div>
+    </section>
+
+    <section>
+      <h2>9. イソトレチノインについて</h2>
+      <p>イソトレチノインは、海外では重症・最重症のざ瘡に使われる経口レチノイドだが、日本では未承認。自由診療や個人輸入で使用されている患者がいる可能性があるため、薬局では「現在飲んでいる薬」として拾い上げることが重要。</p>
+
+      <div class="danger">
+        <strong>最重要：</strong>
+        イソトレチノインは催奇形性が極めて重要な薬。妊娠中、妊娠可能性、妊娠希望、授乳、献血などに関わる確認が必要。
+        個人輸入や自己判断使用は避けるよう説明する。
+      </div>
+
+      <table>
+        <tbody>
+          <tr>
+            <th>国内での位置づけ</th>
+            <td>日本では未承認。保険診療薬として通常処方される薬ではない。</td>
+          </tr>
+          <tr>
+            <th>主なリスク</th>
+            <td>催奇形性、皮膚・粘膜乾燥、肝機能異常、脂質異常、精神症状など</td>
+          </tr>
+          <tr>
+            <th>薬局での確認</th>
+            <td>自由診療薬、個人輸入薬、美容皮膚科処方、サプリ扱いで飲んでいないか。</td>
+          </tr>
+          <tr>
+            <th>対応</th>
+            <td>妊娠可能性がある場合や副作用疑いがある場合は、自己判断継続を避け、処方医・専門医へ確認。</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>10. 服薬指導で必ず確認したい項目</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>確認項目</th>
+            <th>理由</th>
+            <th>該当しやすい薬</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>妊娠・授乳・妊娠希望</td>
+            <td>テトラサイクリン系、イソトレチノインなどで重要。</td>
+            <td>ミノサイクリン、ドキシサイクリン、イソトレチノイン</td>
+          </tr>
+          <tr>
+            <td>年齢</td>
+            <td>小児では歯牙着色・骨発育への影響に注意。</td>
+            <td>テトラサイクリン系</td>
+          </tr>
+          <tr>
+            <td>運転・危険作業</td>
+            <td>めまい・ふらつきが事故につながる。</td>
+            <td>ミノサイクリン</td>
+          </tr>
+          <tr>
+            <td>日焼け・屋外活動</td>
+            <td>光線過敏のリスク確認。</td>
+            <td>ドキシサイクリン、ミノサイクリン</td>
+          </tr>
+          <tr>
+            <td>服用タイミング</td>
+            <td>食道炎や胃部不快感の予防。</td>
+            <td>ドキシサイクリン、ミノサイクリン</td>
+          </tr>
+          <tr>
+            <td>併用薬</td>
+            <td>相互作用、重複抗菌薬、漢方重複を確認。</td>
+            <td>マクロライド系、漢方薬、イソトレチノイン</td>
+          </tr>
+          <tr>
+            <td>外用薬の使用状況</td>
+            <td>ざ瘡治療では内服だけでなく外用継続が重要。</td>
+            <td>全般</td>
+          </tr>
+          <tr>
+            <td>服用期間</td>
+            <td>抗菌薬の長期漫然投与を避ける。</td>
+            <td>内服抗菌薬全般</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>11. 疑義照会・処方監査のポイント</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>状況</th>
+            <th>確認内容</th>
+            <th>対応例</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>妊婦・妊娠可能性がある患者にテトラサイクリン系</td>
+            <td>妊娠週数、妊娠希望、医師把握の有無。</td>
+            <td>必要に応じて疑義照会。</td>
+          </tr>
+          <tr>
+            <td>小児にテトラサイクリン系</td>
+            <td>年齢、体重、処方意図、代替薬の可否。</td>
+            <td>年齢によっては疑義照会。</td>
+          </tr>
+          <tr>
+            <td>ミノサイクリン長期継続</td>
+            <td>効果、副作用、色素沈着、肝機能、自己中止・再開。</td>
+            <td>継続意図を確認。必要時トレーシングレポート。</td>
+          </tr>
+          <tr>
+            <td>ドキシサイクリンを就寝前服用</td>
+            <td>食道炎リスク。服用後すぐ横になるか。</td>
+            <td>服用方法を指導。必要なら服用時点の確認。</td>
+          </tr>
+          <tr>
+            <td>抗菌薬が複数重複</td>
+            <td>他科処方、市販薬、前回残薬。</td>
+            <td>重複・相互作用を確認し、必要時照会。</td>
+          </tr>
+          <tr>
+            <td>漢方薬が複数重複</td>
+            <td>甘草量、偽アルドステロン症症状、血圧、浮腫。</td>
+            <td>重複が多い場合は処方医へ情報提供。</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>12. 門前薬局での服薬指導テンプレート</h2>
+
+      <h3>内服抗菌薬全般</h3>
+      <div class="template">
+        「この薬は赤く腫れたニキビや膿をもったニキビの炎症を抑える目的で使います。よくなっても自己判断で増やしたり、余った薬を後で飲んだりしないでください。」
+      </div>
+
+      <h3>ミノサイクリン</h3>
+      <div class="template">
+        「飲み始めにめまい、ふらつきが出ることがあります。初めて飲むときは車の運転や危険な作業に注意してください。発疹、発熱、強いだるさ、皮膚や白目が黄色いなどがあれば早めに連絡してください。」
+      </div>
+
+      <h3>ドキシサイクリン</h3>
+      <div class="template">
+        「コップ1杯程度の水で飲み、飲んだ後すぐ横にならないでください。日光で皮膚が赤くなりやすくなることがあるため、強い日差しや日焼けに注意してください。」
+      </div>
+
+      <h3>酒皶</h3>
+      <div class="template">
+        「酒皶は薬だけでなく、悪化しやすい刺激を避けることも大切です。日光、飲酒、辛いもの、熱い飲み物、サウナ、急な温度差で悪化することがあります。」
+      </div>
+
+      <h3>漢方薬</h3>
+      <div class="template">
+        「漢方薬は続けて様子を見る薬です。むくみ、血圧上昇、手足のだるさ、力が入りにくい感じがあれば相談してください。他の漢方薬や市販薬を飲んでいる場合も教えてください。」
+      </div>
+    </section>
+
+    <section>
+      <h2>13. 新人薬剤師向けコメント</h2>
+      <p>ざ瘡・酒皶の内服薬で最初に見るべき点は、<strong>抗菌薬の種類、服用期間、妊娠可能性、外用薬併用</strong>。</p>
+      <p>ミノサイクリンは「めまい・色素沈着・重い薬疹」、ドキシサイクリンは「食道炎・光線過敏」、マクロライド系は「相互作用」、ファロペネムは「広域抗菌薬の漫然使用」に注意する。</p>
+      <p>ざ瘡治療では、患者が「抗菌薬だけが効く薬」と誤解しやすい。実際には、炎症を抑える時期と、外用薬で維持する時期を分けて考える必要がある。外用薬を使えているか、刺激で中断していないかまで確認すると、服薬指導の質が上がる。</p>
+    </section>
+
+    <section>
+      <h2>14. 参考情報</h2>
+      <ul>
+        <li>日本皮膚科学会：尋常性痤瘡・酒皶治療ガイドライン2023<br>
+          <a href="https://www.dermatol.or.jp/dermatol/wp-content/uploads/xoops/files/guideline/zasou2023.pdf">https://www.dermatol.or.jp/dermatol/wp-content/uploads/xoops/files/guideline/zasou2023.pdf</a>
+        </li>
+        <li>PMDA：ミノサイクリン塩酸塩 添付文書情報<br>
+          <a href="https://www.pmda.go.jp/PmdaSearch/iyakuDetail/ResultDataSetPDF/300119_6152005F1095_1_09">https://www.pmda.go.jp/PmdaSearch/iyakuDetail/ResultDataSetPDF/300119_6152005F1095_1_09</a>
+        </li>
+        <li>PMDA：ビブラマイシン錠 添付文書情報<br>
+          <a href="https://www.pmda.go.jp/PmdaSearch/rdDetail/iyaku/6152004F1074_3?user=1">https://www.pmda.go.jp/PmdaSearch/rdDetail/iyaku/6152004F1074_3?user=1</a>
+        </li>
+        <li>PMDA：ロキシスロマイシン錠 添付文書情報<br>
+          <a href="https://www.pmda.go.jp/PmdaSearch/bookSearch/01/04987080902454">https://www.pmda.go.jp/PmdaSearch/bookSearch/01/04987080902454</a>
+        </li>
+        <li>PMDA：ファロム錠 添付文書情報<br>
+          <a href="https://www.pmda.go.jp/PmdaSearch/iyakuDetail/ResultDataSetPDF/730155_6139001F1028_3_12">https://www.pmda.go.jp/PmdaSearch/iyakuDetail/ResultDataSetPDF/730155_6139001F1028_3_12</a>
+        </li>
+        <li>日本臨床皮膚医会・日本美容皮膚科学会関連報告：経口イソトレチノインは本邦未承認<br>
+          <a href="https://www.jstage.jst.go.jp/article/jocd/38/4/38_629/_pdf">https://www.jstage.jst.go.jp/article/jocd/38/4/38_629/_pdf</a>
+        </li>
+      </ul>
+    </section>
+
+    <p class="footer">
+      作成日：2026年6月10日<br>
+      注意：本資料は薬局内学習・服薬指導補助を目的とした整理です。実際の投薬・疑義照会では、最新の添付文書、患者背景、処方医の意図を確認してください。
+    </p>
+  </div>
+</body>
+</html>

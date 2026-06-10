@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ニキビ治療 追加情報・使い方の注意点</title>
+  <style>
+    :root {
+      --bg: #f7f8fb;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --line: #d9dee8;
+      --main: #be123c;
+      --main2: #fb7185;
+      --sub: #fff1f2;
+      --danger: #fef2f2;
+      --danger-line: #fecaca;
+      --warn: #fff7ed;
+      --warn-line: #fed7aa;
+      --ok: #f0fdf4;
+      --ok-line: #bbf7d0;
+      --blue: #eff6ff;
+      --blue-line: #bfdbfe;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Sans", "Yu Gothic", "Meiryo", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.75;
+    }
+
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 32px 20px 56px;
+    }
+
+    header {
+      background: linear-gradient(135deg, #9f1239, #fb7185);
+      color: #fff;
+      padding: 32px;
+      border-radius: 18px;
+      margin-bottom: 28px;
+      box-shadow: 0 10px 24px rgba(190, 18, 60, 0.18);
+    }
+
+    header h1 {
+      margin: 0 0 12px;
+      font-size: 30px;
+      line-height: 1.35;
+    }
+
+    header p {
+      margin: 0;
+      opacity: 0.96;
+      font-size: 15px;
+    }
+
+    section {
+      background: var(--card);
+      margin: 22px 0;
+      padding: 26px;
+      border-radius: 16px;
+      box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+    }
+
+    h2 {
+      font-size: 23px;
+      margin: 0 0 16px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--line);
+    }
+
+    h3 {
+      font-size: 18px;
+      margin-top: 24px;
+      margin-bottom: 10px;
+      color: #111827;
+    }
+
+    p {
+      margin: 10px 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0 22px;
+      font-size: 14px;
+      background: #fff;
+    }
+
+    th, td {
+      border: 1px solid var(--line);
+      padding: 10px 12px;
+      vertical-align: top;
+    }
+
+    th {
+      background: #f8fafc;
+      font-weight: 700;
+      text-align: left;
+      white-space: nowrap;
+    }
+
+    tr:nth-child(even) td {
+      background: #fafafa;
+    }
+
+    ul {
+      margin: 8px 0 16px 1.3em;
+      padding: 0;
+    }
+
+    li {
+      margin: 4px 0;
+    }
+
+    .note {
+      background: var(--sub);
+      border-left: 5px solid var(--main2);
+      padding: 16px 18px;
+      border-radius: 10px;
+      margin: 20px 0;
+    }
+
+    .warning {
+      background: var(--warn);
+      border: 1px solid var(--warn-line);
+      padding: 16px 18px;
+      border-radius: 10px;
+      margin: 20px 0;
+    }
+
+    .danger {
+      background: var(--danger);
+      border: 1px solid var(--danger-line);
+      padding: 16px 18px;
+      border-radius: 10px;
+      margin: 20px 0;
+    }
+
+    .ok {
+      background: var(--ok);
+      border: 1px solid var(--ok-line);
+      padding: 16px 18px;
+      border-radius: 10px;
+      margin: 20px 0;
+    }
+
+    .blue {
+      background: var(--blue);
+      border: 1px solid var(--blue-line);
+      padding: 16px 18px;
+      border-radius: 10px;
+      margin: 20px 0;
+    }
+
+    .template {
+      background: #f8fafc;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 16px 18px;
+      margin: 14px 0;
+    }
+
+    .tag {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+      color: #9f1239;
+      background: #ffe4e6;
+      padding: 2px 8px;
+      border-radius: 999px;
+      margin-right: 6px;
+      margin-bottom: 4px;
+    }
+
+    .small {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .footer {
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 28px;
+    }
+
+    a {
+      color: #1d4ed8;
+      word-break: break-all;
+    }
+
+    @media print {
+      body {
+        background: #fff;
+      }
+      .container {
+        max-width: none;
+        padding: 0;
+      }
+      header, section {
+        box-shadow: none;
+      }
+      section {
+        page-break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>ニキビ治療 追加情報・使い方の注意点</h1>
+      <p>皮膚科門前薬局向け：外用薬の正しい使い方、副作用対策、継続指導、生活指導、受診勧奨を中心に整理。</p>
+    </header>
+
+    <div class="note">
+      <strong>この資料の位置づけ：</strong>
+      前回の「ざ瘡・酒皶の内服薬まとめ」に追加する資料。
+      ニキビ治療は内服薬だけでなく、外用薬の塗り方、刺激症状への対処、継続できる生活設計が重要。
+      特にアダパレン、過酸化ベンゾイル、配合剤は初期刺激で中断しやすいため、薬局での説明が治療継続に直結する。
+    </div>
+
+    <section>
+      <h2>1. ニキビ治療の基本構造</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>段階</th>
+            <th>主な病変</th>
+            <th>治療の中心</th>
+            <th>薬局で伝えること</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>面皰中心</td>
+            <td>白ニキビ、黒ニキビ</td>
+            <td>アダパレン、過酸化ベンゾイル、配合外用薬</td>
+            <td>赤く腫れる前の詰まりを改善する治療。すぐ効く薬ではなく継続が必要。</td>
+          </tr>
+          <tr>
+            <td>炎症性皮疹</td>
+            <td>赤ニキビ、膿疱</td>
+            <td>外用抗菌薬、過酸化ベンゾイル、必要時内服抗菌薬</td>
+            <td>抗菌薬は炎症を抑える期間限定の薬。改善後は維持療法へ移行する。</td>
+          </tr>
+          <tr>
+            <td>重症・瘢痕リスク</td>
+            <td>結節、嚢腫、痛み、瘢痕</td>
+            <td>内服抗菌薬、専門医管理、外用併用</td>
+            <td>自己処置で潰さない。瘢痕予防のため早めの受診継続が必要。</td>
+          </tr>
+          <tr>
+            <td>維持期</td>
+            <td>新しいニキビを減らす段階</td>
+            <td>アダパレン、過酸化ベンゾイルなど</td>
+            <td>よくなってからも再発予防として続ける薬がある。</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="blue">
+        <strong>薬局での一言：</strong>
+        「赤いニキビを早く引かせる薬」と「毛穴の詰まりを改善して新しいニキビを防ぐ薬」は役割が違う。
+        患者がここを理解すると、外用薬の中断が減る。
+      </div>
+    </section>
+
+    <section>
+      <h2>2. 主な外用薬と役割</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>分類</th>
+            <th>代表商品名</th>
+            <th>成分名</th>
+            <th>役割</th>
+            <th>主な注意点</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>レチノイド様作用</td>
+            <td>ディフェリンゲル</td>
+            <td>アダパレン</td>
+            <td>毛穴の詰まりを改善し、面皰形成を抑える。</td>
+            <td>乾燥、赤み、ヒリヒリ、皮むけ。妊婦・妊娠可能性に注意。</td>
+          </tr>
+          <tr>
+            <td>過酸化ベンゾイル</td>
+            <td>ベピオゲル、ベピオローション</td>
+            <td>過酸化ベンゾイル</td>
+            <td>抗菌作用と角質剥離作用。耐性菌を起こしにくい。</td>
+            <td>刺激、乾燥、漂白作用。髪・衣類・寝具への付着に注意。</td>
+          </tr>
+          <tr>
+            <td>配合剤</td>
+            <td>エピデュオゲル</td>
+            <td>アダパレン＋過酸化ベンゾイル</td>
+            <td>面皰・炎症性皮疹の両方に対応。</td>
+            <td>単剤より刺激が出やすい。少量から慎重に。</td>
+          </tr>
+          <tr>
+            <td>配合剤</td>
+            <td>デュアック配合ゲル</td>
+            <td>クリンダマイシン＋過酸化ベンゾイル</td>
+            <td>炎症性皮疹に使用。抗菌薬＋BPO。</td>
+            <td>抗菌薬を含むため漫然使用しない。刺激・漂白作用に注意。</td>
+          </tr>
+          <tr>
+            <td>外用抗菌薬</td>
+            <td>ダラシンTゲル／ローション</td>
+            <td>クリンダマイシン</td>
+            <td>炎症性皮疹に使用。</td>
+            <td>耐性菌対策。炎症が落ち着いたら継続要否を確認。</td>
+          </tr>
+          <tr>
+            <td>外用抗菌薬</td>
+            <td>アクアチムクリーム／ローション</td>
+            <td>ナジフロキサシン</td>
+            <td>化膿性炎症を伴うざ瘡など。</td>
+            <td>必要最小限の期間。漫然使用を避ける。</td>
+          </tr>
+          <tr>
+            <td>外用抗菌薬</td>
+            <td>ゼビアックスローション／油性クリーム</td>
+            <td>オゼノキサシン</td>
+            <td>化膿性炎症を伴うざ瘡など。</td>
+            <td>4週間で効果がなければ中止検討。炎症性皮疹消失後は継続しない。</td>
+          </tr>
+          <tr>
+            <td>酒皶治療薬</td>
+            <td>ロゼックスゲル</td>
+            <td>メトロニダゾール</td>
+            <td>酒皶の丘疹・膿疱・紅斑に使用。</td>
+            <td>通常12週間まで。漫然使用を避ける。</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="warning">
+        <strong>重要：</strong>
+        ニキビ外用薬は「薬ごとに塗る場所・期間・目的」が違う。
+        全部を同じように「赤いところだけに塗る」と、効果不足や刺激悪化につながる。
+      </div>
+    </section>
+
+    <section>
+      <h2>3. アダパレン：ディフェリンゲルの使い方</h2>
+      <p>アダパレンは、面皰形成を抑える維持治療の中心薬の一つ。赤いニキビだけに塗る薬ではなく、ニキビができやすい範囲に薄く塗る。</p>
+
+      <table>
+        <tbody>
+          <tr>
+            <th>塗布タイミング</th>
+            <td>通常1日1回、洗顔後、就寝前に使用されることが多い。</td>
+          </tr>
+          <tr>
+            <th>塗る場所</th>
+            <td>ニキビができやすい範囲に薄く。目の周囲、口唇、小鼻のきわ、粘膜、傷・湿疹部位は避ける。</td>
+          </tr>
+          <tr>
+            <th>よくある副作用</th>
+            <td>乾燥、赤み、ヒリヒリ、皮むけ、かゆみ。</td>
+          </tr>
+          <tr>
+            <th>説明のコツ</th>
+            <td>開始2週間程度は刺激が出やすい。保湿と少量塗布で継続しやすくする。</td>
+          </tr>
+          <tr>
+            <th>妊娠関連</th>
+            <td>妊娠中、妊娠している可能性がある場合は必ず確認。添付文書確認が必要。</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="template">
+        <strong>指導例：</strong><br>
+        「これは今ある赤いニキビだけでなく、毛穴の詰まりを改善して新しいニキビをできにくくする薬です。最初は乾燥やヒリヒリが出やすいので、薄く塗ってください。強い赤みや腫れが出る場合は中止して相談してください。」
+      </div>
+    </section>
+
+    <section>
+      <h2>4. 過酸化ベンゾイル：ベピオの使い方</h2>
+      <p>過酸化ベンゾイルは、抗菌作用と角質剥離作用を持つ。抗菌薬ではないため耐性菌を起こしにくく、ざ瘡治療で重要な薬。</p>
+
+      <table>
+        <tbody>
+          <tr>
+            <th>塗布タイミング</th>
+            <td>通常1日1回。洗顔後に使用されることが多い。</td>
+          </tr>
+          <tr>
+            <th>塗る場所</th>
+            <td>患部またはニキビが出やすい範囲に薄く。粘膜、傷、湿疹部位は避ける。</td>
+          </tr>
+          <tr>
+            <th>よくある副作用</th>
+            <td>乾燥、赤み、刺激感、皮むけ、接触皮膚炎。</td>
+          </tr>
+          <tr>
+            <th>特有の注意</th>
+            <td>漂白作用がある。髪、眉毛、衣類、タオル、枕カバーに付着しないよう注意。</td>
+          </tr>
+          <tr>
+            <th>中止が必要なサイン</th>
+            <td>顔全体の腫れ、強いかゆみ、じんましん様症状、強い痛み、ただれ。</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="danger">
+        <strong>ベピオの最重要指導：</strong>
+        漂白作用と接触皮膚炎。白いタオル・寝具を使う、完全に乾いてから就寝する、強い腫れやかぶれは中止して受診。
+      </div>
+
+      <div class="template">
+        <strong>指導例：</strong><br>
+        「この薬は髪や衣類、タオルの色を抜くことがあります。塗った後はよく乾かして、色の濃いタオルや枕カバーへの付着に注意してください。赤みやヒリヒリは出ることがありますが、顔が腫れる、強くかぶれる場合は中止して相談してください。」
+      </div>
+    </section>
+
+    <section>
+      <h2>5. 配合剤：エピデュオ・デュアックの注意点</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>薬剤</th>
+            <th>成分</th>
+            <th>特徴</th>
+            <th>注意点</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>エピデュオゲル</td>
+            <td>アダパレン＋過酸化ベンゾイル</td>
+            <td>面皰と炎症性皮疹の両方に対応しやすい。</td>
+            <td>刺激が出やすい。単剤より乾燥・赤み・皮むけが強くなることがある。</td>
+          </tr>
+          <tr>
+            <td>デュアック配合ゲル</td>
+            <td>クリンダマイシン＋過酸化ベンゾイル</td>
+            <td>炎症性皮疹に使う。抗菌薬とBPOの配合。</td>
+            <td>抗菌薬を含むため、炎症が落ち着いた後の漫然使用は避ける。</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="warning">
+        <strong>初回指導：</strong>
+        配合剤は便利だが刺激も出やすい。顔全体に厚く塗らない。
+        「早く治したいから多く塗る」は逆効果になりやすい。
+      </div>
+
+      <div class="template">
+        <strong>指導例：</strong><br>
+        「配合剤なので効果を期待できますが、その分、乾燥や赤みも出やすい薬です。多く塗ると早く治るわけではありません。薄く、指示された範囲に使ってください。」
+      </div>
+    </section>
+
+    <section>
+      <h2>6. 外用抗菌薬の使い方</h2>
+      <p>外用抗菌薬は炎症性皮疹に使われるが、耐性菌対策のため、必要最小限の期間にとどめる。炎症が落ち着いた後は、アダパレンや過酸化ベンゾイルなどの維持療法へ移ることが多い。</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>薬剤</th>
+            <th>使う場面</th>
+            <th>注意点</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>クリンダマイシン</td>
+            <td>赤ニキビ、膿疱など炎症性皮疹。</td>
+            <td>抗菌薬単独の長期使用は避ける。BPO併用の意図確認。</td>
+          </tr>
+          <tr>
+            <td>ナジフロキサシン</td>
+            <td>化膿性炎症を伴うざ瘡など。</td>
+            <td>必要最小限の期間。改善後の継続要否を確認。</td>
+          </tr>
+          <tr>
+            <td>オゼノキサシン</td>
+            <td>化膿性炎症を伴うざ瘡など。</td>
+            <td>4週間で効果がなければ中止検討。炎症性皮疹消失後は継続しない。</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="blue">
+        <strong>薬局での聞き方：</strong>
+        「赤く腫れたニキビは減っていますか」「外用抗菌薬だけを長く使っていませんか」「ベピオやディフェリンは使えていますか」
+      </div>
+    </section>
+
+    <section>
+      <h2>7. 刺激症状を減らす実践的な使い方</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>問題</th>
+            <th>よくある原因</th>
+            <th>対策</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>ヒリヒリする</td>
+            <td>塗りすぎ、洗顔しすぎ、保湿不足、傷や湿疹部位への塗布。</td>
+            <td>薄く塗る。保湿剤を併用。刺激が強い部位を避ける。</td>
+          </tr>
+          <tr>
+            <td>皮むけがつらい</td>
+            <td>アダパレン、BPO、配合剤の初期刺激。</td>
+            <td>保湿を増やす。医師指示内で隔日開始や塗布量調整を相談。</td>
+          </tr>
+          <tr>
+            <td>赤みが強い</td>
+            <td>接触皮膚炎、塗布範囲過多、日焼け、刺激性スキンケア。</td>
+            <td>強い腫れ・ただれ・かゆみは中止し受診。化粧品を見直す。</td>
+          </tr>
+          <tr>
+            <td>乾燥する</td>
+            <td>洗浄力の強い洗顔、保湿不足、外用薬の刺激。</td>
+            <td>低刺激洗顔、保湿剤、こすらないケア。</td>
+          </tr>
+          <tr>
+            <td>効果がないと感じる</td>
+            <td>評価期間が短い、塗布量不足、塗布範囲違い、中断。</td>
+            <td>まず8〜12週程度の継続を説明。使用状況を確認。</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="ok">
+        <strong>継続のコツ：</strong>
+        初期刺激を「副作用だからすぐ全部やめる」と捉えるのではなく、許容範囲か、調整が必要かを判断する。
+        ただし強い腫れ、ただれ、顔全体の紅斑、粘膜症状は中止・受診。
+      </div>
+    </section>
+
+    <section>
+      <h2>8. 塗る順番・スキンケア</h2>
+      <p>処方医の指示が最優先だが、一般的には洗顔後、保湿、外用薬の順で説明されることが多い。刺激が強い患者では、保湿剤を先に使うことで継続しやすくなる場合がある。</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>手順</th>
+            <th>内容</th>
+            <th>注意点</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1. 洗顔</td>
+            <td>低刺激の洗顔料でやさしく洗う。</td>
+            <td>スクラブ、強い摩擦、1日何度も洗う行為は避ける。</td>
+          </tr>
+          <tr>
+            <td>2. 水分を取る</td>
+            <td>タオルで押さえるように水分を取る。</td>
+            <td>こすらない。</td>
+          </tr>
+          <tr>
+            <td>3. 保湿</td>
+            <td>必要に応じて保湿剤を薄く塗る。</td>
+            <td>ノンコメドジェニック、低刺激を選ぶとよい。</td>
+          </tr>
+          <tr>
+            <td>4. 外用薬</td>
+            <td>指示された薬を薄く塗る。</td>
+            <td>目・口・鼻翼・粘膜・傷・湿疹部位を避ける。</td>
+          </tr>
+          <tr>
+            <td>5. 手洗い</td>
+            <td>塗布後は手を洗う。</td>
+            <td>BPOは衣類・髪の漂白に注意。</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="template">
+        <strong>説明例：</strong><br>
+        「洗顔はこすらず、やさしく行ってください。薬は多く塗るほど早く治るわけではありません。乾燥しやすい薬なので、保湿を併用すると続けやすくなります。」
+      </div>
+    </section>
+
+    <section>
+      <h2>9. 患者が中断しやすい理由と対策</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>中断理由</th>
+            <th>背景</th>
+            <th>薬局での対応</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>ヒリヒリして怖い</td>
+            <td>初期刺激の説明不足。</td>
+            <td>よくある反応と中止すべき反応を分けて説明。</td>
+          </tr>
+          <tr>
+            <td>すぐ効かない</td>
+            <td>面皰治療は効果実感に時間がかかる。</td>
+            <td>赤みだけでなく新しいニキビが減るかを見ると説明。</td>
+          </tr>
+          <tr>
+            <td>塗る場所がわからない</td>
+            <td>赤いところだけに塗っている。</td>
+            <td>薬ごとの塗布範囲を確認。必要なら図示する。</td>
+          </tr>
+          <tr>
+            <td>乾燥して化粧がのらない</td>
+            <td>保湿不足、洗顔しすぎ。</td>
+            <td>保湿剤、低刺激スキンケア、塗布量調整を提案。</td>
+          </tr>
+          <tr>
+            <td>よくなったのでやめた</td>
+            <td>維持療法の理解不足。</td>
+            <td>再発予防として続ける薬があると説明。</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>10. 生活指導・セルフケア</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>項目</th>
+            <th>指導内容</th>
+            <th>補足</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>洗顔</td>
+            <td>1日2回程度、こすらずやさしく。</td>
+            <td>洗いすぎは乾燥・刺激で悪化することがある。</td>
+          </tr>
+          <tr>
+            <td>保湿</td>
+            <td>乾燥を放置しない。</td>
+            <td>治療薬の刺激を減らし、継続しやすくする。</td>
+          </tr>
+          <tr>
+            <td>化粧品</td>
+            <td>ノンコメドジェニック、低刺激のものを選ぶ。</td>
+            <td>油分が多い製品や落としにくい製品で悪化することがある。</td>
+          </tr>
+          <tr>
+            <td>日焼け</td>
+            <td>過度な紫外線を避ける。</td>
+            <td>外用薬使用中は刺激が出やすいことがある。</td>
+          </tr>
+          <tr>
+            <td>触る・潰す</td>
+            <td>触らない、潰さない。</td>
+            <td>炎症悪化、色素沈着、瘢痕の原因になる。</td>
+          </tr>
+          <tr>
+            <td>マスク</td>
+            <td>摩擦・蒸れを減らす。</td>
+            <td>こまめに交換。刺激が少ない素材を選ぶ。</td>
+          </tr>
+          <tr>
+            <td>食事</td>
+            <td>特定食品だけを過度に制限しない。</td>
+            <td>悪化を自覚する食品があれば記録。極端な食事制限は避ける。</td>
+          </tr>
+          <tr>
+            <td>睡眠・ストレス</td>
+            <td>悪化因子として確認する。</td>
+            <td>治療継続の妨げになる生活要因を聞き取る。</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="blue">
+        <strong>注意：</strong>
+        「チョコレートを食べたから必ず悪化する」など単純化しすぎない。
+        患者ごとの悪化パターンを確認する方が現実的。
+      </div>
+    </section>
+
+    <section>
+      <h2>11. 受診勧奨・医師へ相談すべきサイン</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>症状・状況</th>
+            <th>理由</th>
+            <th>対応</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>結節・嚢腫・強い痛みがある</td>
+            <td>瘢痕リスクが高い。</td>
+            <td>早めに皮膚科へ。</td>
+          </tr>
+          <tr>
+            <td>ニキビ跡・凹みが増えている</td>
+            <td>炎症の制御が不十分な可能性。</td>
+            <td>治療強化の相談。</td>
+          </tr>
+          <tr>
+            <td>外用薬で顔全体が腫れる・強くかぶれる</td>
+            <td>接触皮膚炎・過敏症の可能性。</td>
+            <td>薬を中止し、処方医へ相談。</td>
+          </tr>
+          <tr>
+            <td>妊娠中・妊娠希望</td>
+            <td>使えない薬がある。</td>
+            <td>自己判断で使用せず、処方医・薬剤師へ確認。</td>
+          </tr>
+          <tr>
+            <td>長期間抗菌薬を使っている</td>
+            <td>耐性菌、漫然投与の懸念。</td>
+            <td>効果・副作用・継続意図を確認。</td>
+          </tr>
+          <tr>
+            <td>市販薬・美容薬・個人輸入薬を併用</td>
+            <td>重複、刺激、未承認薬のリスク。</td>
+            <td>内容を確認し、必要時医師へ情報提供。</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>12. 薬局で使える初回指導チェックリスト</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>確認項目</th>
+            <th>確認内容</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>薬の目的</td>
+            <td>赤ニキビを抑える薬か、毛穴詰まりを改善する薬か、維持療法か。</td>
+          </tr>
+          <tr>
+            <td>塗布範囲</td>
+            <td>赤いところだけか、ニキビができやすい範囲か。</td>
+          </tr>
+          <tr>
+            <td>塗布量</td>
+            <td>薄く塗る。多く塗っても早く治らない。</td>
+          </tr>
+          <tr>
+            <td>刺激症状</td>
+            <td>乾燥、赤み、ヒリヒリ、皮むけが起こり得る。</td>
+          </tr>
+          <tr>
+            <td>中止すべき症状</td>
+            <td>強い腫れ、ただれ、顔全体の紅斑、じんましん様症状。</td>
+          </tr>
+          <tr>
+            <td>保湿</td>
+            <td>低刺激の保湿を併用できているか。</td>
+          </tr>
+          <tr>
+            <td>妊娠関連</td>
+            <td>妊娠中、妊娠可能性、妊娠希望、授乳。</td>
+          </tr>
+          <tr>
+            <td>併用薬</td>
+            <td>市販のニキビ薬、ピーリング、レチノール化粧品、美容皮膚科薬。</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>13. 継続時フォローの質問例</h2>
+      <div class="template">
+        <strong>効果確認：</strong><br>
+        「赤く腫れるニキビは減ってきましたか。新しくできる数はどうですか。」
+      </div>
+      <div class="template">
+        <strong>使用状況：</strong><br>
+        「薬は毎日使えていますか。ヒリヒリして休んだ日がありますか。」
+      </div>
+      <div class="template">
+        <strong>塗り方：</strong><br>
+        「赤いところだけに塗っていますか。それともニキビができやすい範囲に塗っていますか。」
+      </div>
+      <div class="template">
+        <strong>副作用：</strong><br>
+        「乾燥、赤み、皮むけ、かゆみ、腫れはありませんか。」
+      </div>
+      <div class="template">
+        <strong>生活面：</strong><br>
+        「洗顔や保湿、マスクの摩擦で悪化していそうなことはありますか。」
+      </div>
+    </section>
+
+    <section>
+      <h2>14. 患者説明用：短い説明文</h2>
+
+      <h3>外用薬を始める患者</h3>
+      <div class="template">
+        「ニキビの薬は、最初の1〜2週間に乾燥やヒリヒリが出ることがあります。多く塗ると早く治るわけではないので、薄く使ってください。強く腫れる、ただれる、かゆみが強い場合は中止して相談してください。」
+      </div>
+
+      <h3>効果がないと感じる患者</h3>
+      <div class="template">
+        「ニキビ治療は、新しいニキビができる数を減らすまでに時間がかかります。数日で判断せず、塗り方と継続状況を確認しながら続けることが大切です。」
+      </div>
+
+      <h3>よくなって中止しそうな患者</h3>
+      <div class="template">
+        「赤みが引いても、毛穴の詰まりを防ぐ治療は続けることがあります。やめるタイミングは自己判断せず、次回診察で確認してください。」
+      </div>
+
+      <h3>刺激がつらい患者</h3>
+      <div class="template">
+        「刺激が強い場合は、塗る量や保湿、使用頻度の調整で続けられることがあります。ただし、顔全体が腫れる、ただれる、強いかゆみがある場合は薬を中止して受診してください。」
+      </div>
+    </section>
+
+    <section>
+      <h2>15. 新人薬剤師向けコメント</h2>
+      <p>ニキビ治療で最も多い失敗は、患者が「赤いところにだけ、たっぷり塗る」と誤解すること。アダパレンやBPOは、薬の役割によって塗布範囲が異なるため、処方内容ごとに確認する。</p>
+      <p>次に多い失敗は、初期刺激で中断すること。乾燥・ヒリヒリ・皮むけはよくあるが、強い腫れ・ただれ・顔全体の紅斑は中止・受診の対象。この線引きを説明する。</p>
+      <p>外用抗菌薬は、効くからといって漫然と続ける薬ではない。炎症が落ち着いた後は、BPOやアダパレンなどの維持療法へ移行する流れを患者に理解してもらう。</p>
+      <p>薬局では「薬を渡す」だけでなく、「塗れているか」「続けられているか」「刺激で困っていないか」を毎回確認する。ここがニキビ治療の継続率を大きく左右する。</p>
+    </section>
+
+    <section>
+      <h2>16. 参考情報</h2>
+      <ul>
+        <li>日本皮膚科学会：尋常性痤瘡・酒皶治療ガイドライン2023<br>
+          <a href="https://www.dermatol.or.jp/dermatol/wp-content/uploads/xoops/files/guideline/zasou2023.pdf">https://www.dermatol.or.jp/dermatol/wp-content/uploads/xoops/files/guideline/zasou2023.pdf</a>
+        </li>
+        <li>PMDA：ベピオゲル2.5％／ベピオローション2.5％（過酸化ベンゾイル）<br>
+          <a href="https://www.pmda.go.jp/PmdaSearch/rdDetail/iyaku/2699712Q1021_1?user=1">https://www.pmda.go.jp/PmdaSearch/rdDetail/iyaku/2699712Q1021_1?user=1</a>
+        </li>
+        <li>PMDA：ディフェリンゲル0.1％（アダパレン）<br>
+          <a href="https://www.pmda.go.jp/PmdaSearch/rdDetail/iyaku/2699711Q1027_2?user=1">https://www.pmda.go.jp/PmdaSearch/rdDetail/iyaku/2699711Q1027_2?user=1</a>
+        </li>
+        <li>PMDA：エピデュオゲル（アダパレン・過酸化ベンゾイル）<br>
+          <a href="https://www.pmda.go.jp/PmdaSearch/rdDetail/iyaku/2699805Q1020_2?user=1">https://www.pmda.go.jp/PmdaSearch/rdDetail/iyaku/2699805Q1020_2?user=1</a>
+        </li>
+        <li>PMDA：デュアック配合ゲル（クリンダマイシン・過酸化ベンゾイル）<br>
+          <a href="https://www.pmda.go.jp/PmdaSearch/rdDetail/iyaku/2699803Q1020_3?user=1">https://www.pmda.go.jp/PmdaSearch/rdDetail/iyaku/2699803Q1020_3?user=1</a>
+        </li>
+        <li>PMDA：ゼビアックスローション2％／油性クリーム2％（オゼノキサシン）<br>
+          <a href="https://www.pmda.go.jp/PmdaSearch/rdSearch/02/2639701N1029?user=1">https://www.pmda.go.jp/PmdaSearch/rdSearch/02/2639701N1029?user=1</a>
+        </li>
+        <li>PMDA：アクアチムクリーム1％（ナジフロキサシン）<br>
+          <a href="https://www.pmda.go.jp/PmdaSearch/rdDetail/iyaku/2639700N1032_1?user=1">https://www.pmda.go.jp/PmdaSearch/rdDetail/iyaku/2639700N1032_1?user=1</a>
+        </li>
+        <li>PMDA：ロゼックスゲル0.75％（メトロニダゾール）<br>
+          <a href="https://www.pmda.go.jp/PmdaSearch/rdDetail/iyaku/2699713Q1026_2?user=1">https://www.pmda.go.jp/PmdaSearch/rdDetail/iyaku/2699713Q1026_2?user=1</a>
+        </li>
+      </ul>
+    </section>
+
+    <p class="footer">
+      作成日：2026年6月10日<br>
+      注意：本資料は薬局内学習・服薬指導補助を目的とした整理です。実際の投薬・疑義照会では、最新の添付文書、患者背景、処方医の意図を確認してください。
+    </p>
+  </div>
+</body>
+</html>

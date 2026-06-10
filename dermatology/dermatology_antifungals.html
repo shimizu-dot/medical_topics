@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>皮膚科領域で使用される抗真菌薬まとめ</title>
+  <style>
+    :root {
+      --bg: #f7f8fb;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --line: #d9dee8;
+      --main: #2563eb;
+      --sub: #eff6ff;
+      --warn: #fff7ed;
+      --warn-line: #fed7aa;
+      --danger: #fef2f2;
+      --danger-line: #fecaca;
+      --ok: #f0fdf4;
+      --ok-line: #bbf7d0;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Sans", "Yu Gothic", "Meiryo", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.75;
+    }
+
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 32px 20px 56px;
+    }
+
+    header {
+      background: linear-gradient(135deg, #1d4ed8, #2563eb);
+      color: #fff;
+      padding: 32px;
+      border-radius: 18px;
+      margin-bottom: 28px;
+      box-shadow: 0 10px 24px rgba(37, 99, 235, 0.18);
+    }
+
+    header h1 {
+      margin: 0 0 12px;
+      font-size: 30px;
+      line-height: 1.35;
+    }
+
+    header p {
+      margin: 0;
+      opacity: 0.95;
+      font-size: 15px;
+    }
+
+    .note {
+      background: var(--sub);
+      border-left: 5px solid var(--main);
+      padding: 16px 18px;
+      border-radius: 10px;
+      margin: 20px 0;
+    }
+
+    .warning {
+      background: var(--warn);
+      border: 1px solid var(--warn-line);
+      padding: 16px 18px;
+      border-radius: 10px;
+      margin: 20px 0;
+    }
+
+    .danger {
+      background: var(--danger);
+      border: 1px solid var(--danger-line);
+      padding: 16px 18px;
+      border-radius: 10px;
+      margin: 20px 0;
+    }
+
+    .ok {
+      background: var(--ok);
+      border: 1px solid var(--ok-line);
+      padding: 16px 18px;
+      border-radius: 10px;
+      margin: 20px 0;
+    }
+
+    section {
+      background: var(--card);
+      margin: 22px 0;
+      padding: 26px;
+      border-radius: 16px;
+      box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+    }
+
+    h2 {
+      font-size: 23px;
+      margin: 0 0 16px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--line);
+    }
+
+    h3 {
+      font-size: 18px;
+      margin-top: 24px;
+      margin-bottom: 10px;
+      color: #111827;
+    }
+
+    p {
+      margin: 10px 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0 22px;
+      font-size: 14px;
+      background: #fff;
+    }
+
+    th, td {
+      border: 1px solid var(--line);
+      padding: 10px 12px;
+      vertical-align: top;
+    }
+
+    th {
+      background: #f1f5f9;
+      font-weight: 700;
+      text-align: left;
+      white-space: nowrap;
+    }
+
+    tr:nth-child(even) td {
+      background: #fafafa;
+    }
+
+    ul {
+      margin: 8px 0 16px 1.3em;
+      padding: 0;
+    }
+
+    li {
+      margin: 4px 0;
+    }
+
+    .small {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .tag {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+      color: #1d4ed8;
+      background: #dbeafe;
+      padding: 2px 8px;
+      border-radius: 999px;
+      margin-right: 6px;
+    }
+
+    .template {
+      background: #f8fafc;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 16px 18px;
+      margin: 14px 0;
+    }
+
+    .footer {
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 28px;
+    }
+
+    @media print {
+      body {
+        background: #fff;
+      }
+      .container {
+        max-width: none;
+        padding: 0;
+      }
+      header, section {
+        box-shadow: none;
+      }
+      section {
+        page-break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>皮膚科領域で使用される抗真菌薬まとめ</h1>
+      <p>皮膚科門前薬局向け：爪白癬、足白癬、体部白癬、股部白癬、頭部白癬、カンジダ症、癜風などで使う抗真菌薬の実務整理。</p>
+    </header>
+
+    <div class="note">
+      <strong>位置づけ：</strong>
+      抗真菌薬は「外用で治療する疾患」と「内服が必要になりやすい疾患」を分けて考えると整理しやすい。
+      薬局では、外用薬なら塗布範囲・治療期間、内服薬なら肝機能・血液検査・相互作用・妊娠可能性の確認が重要。
+    </div>
+
+    <section>
+      <h2>1. 皮膚科で使う抗真菌薬の全体像</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>分類</th>
+            <th>主な薬剤</th>
+            <th>主な対象疾患</th>
+            <th>薬局で重要な確認点</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>外用抗真菌薬</td>
+            <td>ラノコナゾール、ルリコナゾール、テルビナフィン、ブテナフィン、ケトコナゾールなど</td>
+            <td>足白癬、体部白癬、股部白癬、癜風、皮膚カンジダ症</td>
+            <td>塗布範囲、治療期間、症状改善後も継続する説明</td>
+          </tr>
+          <tr>
+            <td>爪白癬外用薬</td>
+            <td>エフィナコナゾール、ルリコナゾール爪外用液</td>
+            <td>軽症〜中等症の爪白癬など</td>
+            <td>毎日継続、爪が生え替わるまで時間がかかることの説明</td>
+          </tr>
+          <tr>
+            <td>内服抗真菌薬</td>
+            <td>テルビナフィン、イトラコナゾール、ホスラブコナゾール</td>
+            <td>爪白癬、頭部白癬、広範囲・難治性白癬など</td>
+            <td>肝機能、血液検査、相互作用、妊娠、治療期間</td>
+          </tr>
+          <tr>
+            <td>カンジダ治療薬</td>
+            <td>フルコナゾール、イトラコナゾールなど</td>
+            <td>口腔・食道・腟・皮膚カンジダ症など</td>
+            <td>相互作用、肝機能、妊娠、基礎疾患</td>
+          </tr>
+          <tr>
+            <td>深在性真菌症薬</td>
+            <td>ボリコナゾール、ミカファンギンなど</td>
+            <td>侵襲性真菌症など</td>
+            <td>皮膚科外来より病院管理が中心。TDMや検査値管理が重要</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>皮膚科門前で特に重要なのは、内服薬では<strong>テルビナフィン、イトラコナゾール、ホスラブコナゾール</strong>、外用薬では<strong>ルリコナゾール、ラノコナゾール、テルビナフィン、エフィナコナゾール</strong>。</p>
+    </section>
+
+    <section>
+      <h2>2. 内服抗真菌薬の比較</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>代表商品名</th>
+            <th>成分名</th>
+            <th>主な用途</th>
+            <th>主な特徴</th>
+            <th>薬局での注意点</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>ラミシール錠など</td>
+            <td>テルビナフィン</td>
+            <td>爪白癬、白癬症など</td>
+            <td>アリルアミン系。白癬菌に強い。</td>
+            <td>肝障害、血液障害、味覚異常、皮疹に注意。</td>
+          </tr>
+          <tr>
+            <td>イトリゾールなど</td>
+            <td>イトラコナゾール</td>
+            <td>爪白癬、カンジダ症、癜風など</td>
+            <td>トリアゾール系。幅広い真菌に作用。</td>
+            <td>CYP3A4相互作用が非常に多い。妊婦禁忌。</td>
+          </tr>
+          <tr>
+            <td>ネイリン</td>
+            <td>ホスラブコナゾール</td>
+            <td>爪白癬</td>
+            <td>爪白癬治療に特化した内服薬。</td>
+            <td>爪白癬の確定診断、肝機能、治療期間の説明。</td>
+          </tr>
+          <tr>
+            <td>ジフルカンなど</td>
+            <td>フルコナゾール</td>
+            <td>カンジダ症など</td>
+            <td>カンジダに使われることが多い。</td>
+            <td>肝機能、QT延長、相互作用に注意。</td>
+          </tr>
+          <tr>
+            <td>ブイフェンドなど</td>
+            <td>ボリコナゾール</td>
+            <td>深在性真菌症など</td>
+            <td>病院管理が中心。</td>
+            <td>視覚障害、光線過敏、肝機能、TDMなど。</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>3. テルビナフィン：ラミシール錠など</h2>
+      <p>テルビナフィンは白癬菌に対してよく使われる内服抗真菌薬。皮膚科では、特に爪白癬で処方される。外用薬では届きにくい爪の内部に感染が及んでいる場合、内服治療が選択されることがある。</p>
+
+      <div class="danger">
+        <strong>最重要：</strong>
+        肝機能障害と血液障害の確認。投与前・投与中の検査、体調変化の聞き取りが重要。
+      </div>
+
+      <table>
+        <tbody>
+          <tr>
+            <th>主な適応</th>
+            <td>爪白癬、白癬症など</td>
+          </tr>
+          <tr>
+            <th>服用</th>
+            <td>通常は1日1回</td>
+          </tr>
+          <tr>
+            <th>重要副作用</th>
+            <td>肝障害、血液障害、重症薬疹、味覚異常</td>
+          </tr>
+          <tr>
+            <th>確認事項</th>
+            <td>肝疾患歴、血液疾患歴、倦怠感、食欲不振、発疹、発熱、咽頭痛、口内炎</td>
+          </tr>
+          <tr>
+            <th>指導ポイント</th>
+            <td>長期服用になることが多い。症状がなくても検査を受ける。体調変化時は早めに相談。</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="template">
+        <strong>指導例：</strong><br>
+        「爪の水虫は、爪が生え替わるまで時間がかかります。薬を飲んですぐに変色した爪がきれいになるわけではありません。食欲不振、吐き気、強いだるさ、皮膚や白目が黄色い、発疹、発熱があれば早めに連絡してください。」
+      </div>
+    </section>
+
+    <section>
+      <h2>4. イトラコナゾール：イトリゾールなど</h2>
+      <p>イトラコナゾールはトリアゾール系の抗真菌薬で、白癬、カンジダ、癜風など幅広い真菌症に使われる。爪白癬では連日投与またはパルス療法として使われることがある。</p>
+
+      <div class="danger">
+        <strong>最重要：</strong>
+        CYP3A4阻害による相互作用。併用禁忌・併用注意が非常に多いため、他科薬・市販薬・サプリまで確認する。
+      </div>
+
+      <table>
+        <tbody>
+          <tr>
+            <th>主な適応</th>
+            <td>爪白癬、白癬、カンジダ症、癜風など</td>
+          </tr>
+          <tr>
+            <th>特徴</th>
+            <td>幅広い抗真菌スペクトル</td>
+          </tr>
+          <tr>
+            <th>重要副作用</th>
+            <td>肝障害、うっ血性心不全関連、消化器症状、薬疹</td>
+          </tr>
+          <tr>
+            <th>重要な相互作用</th>
+            <td>CYP3A4基質薬、睡眠薬、抗不整脈薬、Ca拮抗薬、スタチン、DOACなど</td>
+          </tr>
+          <tr>
+            <th>指導ポイント</th>
+            <td>併用薬確認が必須。妊婦または妊娠している可能性のある女性は禁忌。</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>確認したい併用薬の例</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>薬効分類</th>
+            <th>注意する薬の例</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>睡眠薬</td>
+            <td>トリアゾラム、スボレキサントなど</td>
+          </tr>
+          <tr>
+            <td>脂質異常症薬</td>
+            <td>シンバスタチンなど</td>
+          </tr>
+          <tr>
+            <td>循環器薬</td>
+            <td>一部のCa拮抗薬、抗不整脈薬など</td>
+          </tr>
+          <tr>
+            <td>抗凝固薬</td>
+            <td>リバーロキサバンなど</td>
+          </tr>
+          <tr>
+            <td>泌尿器薬</td>
+            <td>PDE5阻害薬など</td>
+          </tr>
+          <tr>
+            <td>抗がん薬・免疫抑制薬</td>
+            <td>一部の分子標的薬、免疫抑制薬など</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="template">
+        <strong>指導例：</strong><br>
+        「この薬は飲み合わせの確認がとても重要です。他の病院の薬、睡眠薬、血液をサラサラにする薬、血圧の薬、コレステロールの薬があれば必ず教えてください。」
+      </div>
+    </section>
+
+    <section>
+      <h2>5. ホスラブコナゾール：ネイリン</h2>
+      <p>ホスラブコナゾールは爪白癬に使われる内服抗真菌薬。爪白癬治療に特化した薬として、治療期間と効果の見え方を丁寧に説明する必要がある。</p>
+
+      <table>
+        <tbody>
+          <tr>
+            <th>代表商品名</th>
+            <td>ネイリン</td>
+          </tr>
+          <tr>
+            <th>成分名</th>
+            <td>ホスラブコナゾール</td>
+          </tr>
+          <tr>
+            <th>主な用途</th>
+            <td>爪白癬</td>
+          </tr>
+          <tr>
+            <th>特徴</th>
+            <td>爪白癬治療に特化した内服薬</td>
+          </tr>
+          <tr>
+            <th>重要確認</th>
+            <td>爪白癬の確定診断、肝機能、妊娠可能性、併用薬</td>
+          </tr>
+          <tr>
+            <th>指導ポイント</th>
+            <td>変色爪がすぐ戻るわけではない。新しい爪が伸びるまで時間がかかる。</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="warning">
+        <strong>患者の期待値調整：</strong>
+        「飲み始めたのに爪がすぐきれいにならない」という不安が出やすい。効果がないのではなく、爪の生え替わりに時間がかかることを初回で説明する。
+      </div>
+
+      <div class="template">
+        <strong>指導例：</strong><br>
+        「この薬は爪の中の菌を減らす薬です。すでに変色・変形した部分がすぐ透明になるわけではなく、新しい爪が伸びてきて少しずつ置き換わります。数か月単位で見ていく治療です。」
+      </div>
+    </section>
+
+    <section>
+      <h2>6. 外用抗真菌薬</h2>
+      <p>足白癬、体部白癬、股部白癬、癜風、皮膚カンジダ症では、外用抗真菌薬が基本になることが多い。症状が軽い足白癬では、内服より外用で治療するケースが多い。</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>代表商品名</th>
+            <th>成分名</th>
+            <th>主な対象</th>
+            <th>特徴</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>ルリコン</td>
+            <td>ルリコナゾール</td>
+            <td>白癬、カンジダ、癜風</td>
+            <td>皮膚科で頻用。1日1回が多い。</td>
+          </tr>
+          <tr>
+            <td>アスタット</td>
+            <td>ラノコナゾール</td>
+            <td>白癬、カンジダ、癜風</td>
+            <td>皮膚科で頻用。</td>
+          </tr>
+          <tr>
+            <td>ラミシール外用</td>
+            <td>テルビナフィン</td>
+            <td>白癬</td>
+            <td>白癬に使いやすい。</td>
+          </tr>
+          <tr>
+            <td>メンタックス</td>
+            <td>ブテナフィン</td>
+            <td>白癬</td>
+            <td>足白癬など。</td>
+          </tr>
+          <tr>
+            <td>ニゾラール</td>
+            <td>ケトコナゾール</td>
+            <td>脂漏性皮膚炎、癜風、カンジダなど</td>
+            <td>シャンプー・ローション等も使われる。</td>
+          </tr>
+          <tr>
+            <td>ペキロン</td>
+            <td>アモロルフィン</td>
+            <td>白癬など</td>
+            <td>外用薬の選択肢。</td>
+          </tr>
+          <tr>
+            <td>クレナフィン爪外用液</td>
+            <td>エフィナコナゾール</td>
+            <td>爪白癬</td>
+            <td>爪専用外用薬。</td>
+          </tr>
+          <tr>
+            <td>ルコナック爪外用液</td>
+            <td>ルリコナゾール</td>
+            <td>爪白癬</td>
+            <td>爪専用外用薬。</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="template">
+        <strong>外用薬の指導例：</strong><br>
+        「症状がある部分だけでなく、その周囲にも広めに塗ってください。かゆみが消えても菌が残っていることがあるので、自己判断で早くやめないでください。」
+      </div>
+    </section>
+
+    <section>
+      <h2>7. 爪白癬治療での説明ポイント</h2>
+      <p>爪白癬では、患者の期待値調整が重要。薬を使っても、すでに濁った爪がすぐ透明になるわけではない。新しい爪が伸びることで徐々に置き換わる。</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>説明すべき点</th>
+            <th>内容</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>診断</td>
+            <td>見た目だけではなく、直接鏡検や培養などで確認することが望ましい。</td>
+          </tr>
+          <tr>
+            <td>効果の見え方</td>
+            <td>変色した爪が急に治るのではなく、新しい爪が伸びて置き換わる。</td>
+          </tr>
+          <tr>
+            <td>治療期間</td>
+            <td>数か月単位。足の爪は特に時間がかかる。</td>
+          </tr>
+          <tr>
+            <td>再発予防</td>
+            <td>足白癬の治療、靴・靴下・足の清潔、家族内感染対策。</td>
+          </tr>
+          <tr>
+            <td>中断防止</td>
+            <td>見た目の改善が遅くても自己中止しない。</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>8. 抗真菌薬で確認すべき副作用</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>副作用</th>
+            <th>注意する薬</th>
+            <th>薬局での聞き取り</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>肝障害</td>
+            <td>テルビナフィン、イトラコナゾール、ホスラブコナゾール、フルコナゾールなど</td>
+            <td>倦怠感、食欲不振、吐き気、黄疸、尿色濃染</td>
+          </tr>
+          <tr>
+            <td>血液障害</td>
+            <td>テルビナフィンなど</td>
+            <td>発熱、咽頭痛、口内炎、紫斑、出血傾向</td>
+          </tr>
+          <tr>
+            <td>消化器症状</td>
+            <td>イトラコナゾール、ホスラブコナゾールなど</td>
+            <td>胃部不快感、下痢、吐き気</td>
+          </tr>
+          <tr>
+            <td>薬疹・重症薬疹</td>
+            <td>内服抗真菌薬全般</td>
+            <td>発疹、発熱、粘膜症状、目の充血</td>
+          </tr>
+          <tr>
+            <td>味覚異常</td>
+            <td>テルビナフィン</td>
+            <td>味がわかりにくい、食欲低下</td>
+          </tr>
+          <tr>
+            <td>心不全関連</td>
+            <td>イトラコナゾール</td>
+            <td>息切れ、浮腫、急な体重増加</td>
+          </tr>
+          <tr>
+            <td>QT延長関連</td>
+            <td>一部アゾール系</td>
+            <td>動悸、失神、併用薬確認</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="ok">
+        <strong>聞き方の工夫：</strong>
+        「検査を受けていますか」だけでなく、「次回の採血予定はありますか」と確認すると実務的。
+      </div>
+    </section>
+
+    <section>
+      <h2>9. 相互作用で特に注意する薬</h2>
+      <p>抗真菌薬のなかでも、イトラコナゾールは相互作用確認が最重要。処方が出た時点で、他科薬・市販薬・サプリメントまで確認する。</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>抗真菌薬</th>
+            <th>相互作用の注意度</th>
+            <th>コメント</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>イトラコナゾール</td>
+            <td>非常に高い</td>
+            <td>CYP3A4阻害。併用禁忌・注意が多い。</td>
+          </tr>
+          <tr>
+            <td>フルコナゾール</td>
+            <td>高い</td>
+            <td>CYP阻害、QT延長関連に注意。</td>
+          </tr>
+          <tr>
+            <td>ボリコナゾール</td>
+            <td>非常に高い</td>
+            <td>病院管理が多い。CYP相互作用、TDM、光線過敏など。</td>
+          </tr>
+          <tr>
+            <td>テルビナフィン</td>
+            <td>中等度</td>
+            <td>CYP2D6関連、肝機能・血液障害に注意。</td>
+          </tr>
+          <tr>
+            <td>ホスラブコナゾール</td>
+            <td>中等度</td>
+            <td>併用薬と肝機能確認は必要。</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="template">
+        <strong>イトラコナゾール処方時の確認例：</strong><br>
+        「睡眠薬、抗不安薬、血液をサラサラにする薬、血圧の薬、コレステロールの薬、不整脈の薬、前立腺や勃起不全の薬、抗がん薬、免疫抑制薬はありますか。」
+      </div>
+    </section>
+
+    <section>
+      <h2>10. 疾患別の整理</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>疾患</th>
+            <th>主な治療</th>
+            <th>薬局でのポイント</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>足白癬</td>
+            <td>外用抗真菌薬が中心</td>
+            <td>足趾間だけでなく足底・足縁まで広く塗布。</td>
+          </tr>
+          <tr>
+            <td>爪白癬</td>
+            <td>外用または内服</td>
+            <td>確定診断、治療期間、爪の生え替わりを説明。</td>
+          </tr>
+          <tr>
+            <td>体部白癬・股部白癬</td>
+            <td>外用が中心、広範囲なら内服も</td>
+            <td>ステロイド外用のみで悪化することがある。</td>
+          </tr>
+          <tr>
+            <td>頭部白癬</td>
+            <td>内服が必要になりやすい</td>
+            <td>家族内感染、共有物、登校・生活指導。</td>
+          </tr>
+          <tr>
+            <td>カンジダ症</td>
+            <td>外用または内服</td>
+            <td>糖尿病、抗菌薬使用、ステロイド使用など背景確認。</td>
+          </tr>
+          <tr>
+            <td>癜風</td>
+            <td>外用が中心、再発あり</td>
+            <td>色素変化は菌が消えても残ることがある。</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>11. 門前薬局での服薬指導テンプレート</h2>
+
+      <h3>内服抗真菌薬の場合</h3>
+      <div class="template">
+        「この薬は真菌、いわゆるカビの感染を治療する薬です。爪の場合、薬を飲んでも今ある濁った爪がすぐ透明になるわけではなく、新しい爪が伸びて少しずつ置き換わります。数か月単位で見る治療です。」
+      </div>
+      <div class="template">
+        「肝臓や血液の副作用を確認するため、採血が必要になることがあります。強いだるさ、食欲不振、吐き気、発疹、発熱、尿の色が濃い、白目が黄色いなどがあれば早めに連絡してください。」
+      </div>
+      <div class="template">
+        「飲み合わせが重要な薬があります。他の病院の薬、市販薬、サプリメントも含めて確認させてください。」
+      </div>
+
+      <h3>外用抗真菌薬の場合</h3>
+      <div class="template">
+        「かゆいところだけでなく、症状の周囲まで広めに塗ってください。足の場合は、指の間だけでなく、足の裏や足の縁にも塗ることがあります。」
+      </div>
+      <div class="template">
+        「かゆみや赤みが先に引いても、菌が残っていることがあります。よくなったように見えても、指示された期間は続けてください。」
+      </div>
+    </section>
+
+    <section>
+      <h2>12. 新人薬剤師向けコメント</h2>
+      <p>抗真菌薬で最初に見るべきポイントは、外用か内服か。外用なら<strong>塗り方・範囲・期間</strong>、内服なら<strong>肝機能・血液検査・相互作用・妊娠可能性</strong>を確認する。</p>
+      <p>特にイトラコナゾールは、処方が出た時点で併用薬を機械的に確認するべき薬。患者が「皮膚の薬だから大丈夫」と思っていても、循環器薬、睡眠薬、抗凝固薬と重大な相互作用を起こす可能性がある。</p>
+      <p>爪白癬では、患者の不満の多くが「飲んでいるのに見た目が変わらない」。これは効果がないというより、爪の生え替わりに時間がかかるため。初回にここを説明しておくと、服薬継続率が上がる。</p>
+    </section>
+
+    <p class="footer">
+      作成日：2026年6月10日<br>
+      注意：本資料は薬局内学習・服薬指導補助を目的とした整理です。実際の投薬・疑義照会では、最新の添付文書、患者背景、処方医の意図を確認してください。
+    </p>
+  </div>
+</body>
+</html>
