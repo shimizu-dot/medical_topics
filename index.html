@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>サイトマップ</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", sans-serif;
+      background: #f0f4f8;
+      color: #333;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1.5rem;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      color: #1a3a5c;
+      margin-bottom: 2rem;
+      letter-spacing: 0.05em;
+    }
+
+    .link-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      width: 100%;
+      max-width: 480px;
+    }
+
+    .link-card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.09);
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+
+    .link-card:hover {
+      box-shadow: 0 6px 18px rgba(0,0,0,0.14);
+      transform: translateY(-3px);
+    }
+
+    .link-card a {
+      display: flex;
+      align-items: center;
+      padding: 1.1rem 1.4rem;
+      text-decoration: none;
+      color: inherit;
+      border-radius: 12px;
+    }
+
+    .link-icon {
+      font-size: 1.6rem;
+      margin-right: 1rem;
+      flex-shrink: 0;
+    }
+
+    .link-body {
+      flex: 1;
+    }
+
+    .link-title {
+      font-size: 1rem;
+      font-weight: bold;
+      color: #1a3a5c;
+    }
+
+    .link-url {
+      font-size: 0.75rem;
+      color: #aaa;
+      margin-top: 0.2rem;
+    }
+
+    .link-arrow {
+      color: #ccc;
+      font-size: 1.2rem;
+      margin-left: 0.5rem;
+    }
+
+    .card-medical { border-left: 5px solid #1a5276; }
+    .card-portfolio { border-left: 5px solid #1e8449; }
+    .card-wordpress { border-left: 5px solid #21759b; }
+
+    footer {
+      margin-top: 2.5rem;
+      font-size: 0.75rem;
+      color: #bbb;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>サイトマップ</h1>
+
+  <div class="link-list">
+
+    <div class="link-card card-medical">
+      <a href="top.html">
+        <span class="link-icon">🏥</span>
+        <div class="link-body">
+          <div class="link-title">医療トピック 資料一覧</div>
+          <div class="link-url">top.html</div>
+        </div>
+        <span class="link-arrow">›</span>
+      </a>
+    </div>
+
+    <div class="link-card card-portfolio">
+      <a href="https://www2.h4mizoo.shop/portfolio/" target="_blank" rel="noopener">
+        <span class="link-icon">🗂️</span>
+        <div class="link-body">
+          <div class="link-title">ポートフォリオ</div>
+          <div class="link-url">www2.h4mizoo.shop/portfolio/</div>
+        </div>
+        <span class="link-arrow">›</span>
+      </a>
+    </div>
+
+    <div class="link-card card-wordpress">
+      <a href="https://www2.h4mizoo.shop/wordpress/" target="_blank" rel="noopener">
+        <span class="link-icon">📝</span>
+        <div class="link-body">
+          <div class="link-title">WordPress サイト</div>
+          <div class="link-url">www2.h4mizoo.shop/wordpress/</div>
+        </div>
+        <span class="link-arrow">›</span>
+      </a>
+    </div>
+
+  </div>
+
+  <footer>h4mizoo.shop</footer>
+
+</body>
+</html>
