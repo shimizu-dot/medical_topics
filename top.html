@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>医療トピック 資料一覧</title>
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     body {
       font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", sans-serif;
@@ -20,8 +25,17 @@
       padding: 2rem 1.5rem;
       text-align: center;
     }
-    header h1 { font-size: 1.8rem; letter-spacing: 0.05em; }
-    header p { margin-top: 0.5rem; font-size: 0.9rem; opacity: 0.8; }
+
+    header h1 {
+      font-size: 1.8rem;
+      letter-spacing: 0.05em;
+    }
+
+    header p {
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
 
     nav {
       background: #154360;
@@ -31,6 +45,7 @@
       gap: 0.25rem;
       padding: 0.6rem 1rem;
     }
+
     nav a {
       color: #aed6f1;
       text-decoration: none;
@@ -39,7 +54,11 @@
       border-radius: 20px;
       transition: background 0.15s;
     }
-    nav a:hover { background: rgba(255,255,255,0.15); color: white; }
+
+    nav a:hover {
+      background: rgba(255, 255, 255, 0.15);
+      color: white;
+    }
 
     main {
       max-width: 900px;
@@ -60,8 +79,16 @@
       padding-bottom: 0.5rem;
       border-bottom: 2px solid currentColor;
     }
-    .section-icon { font-size: 1.3rem; }
-    .section-title { font-size: 1.1rem; font-weight: bold; }
+
+    .section-icon {
+      font-size: 1.3rem;
+    }
+
+    .section-title {
+      font-size: 1.1rem;
+      font-weight: bold;
+    }
+
     .section-count {
       font-size: 0.75rem;
       background: currentColor;
@@ -69,21 +96,31 @@
       padding: 0.15rem 0.5rem;
       margin-left: auto;
     }
-    .section-count span { color: white; mix-blend-mode: difference; }
 
-    .card-list { display: flex; flex-direction: column; gap: 0.6rem; }
+    .section-count span {
+      color: white;
+      mix-blend-mode: difference;
+    }
+
+    .card-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
 
     .card {
       background: white;
       border-radius: 10px;
       border-left: 5px solid currentColor;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.07);
       transition: box-shadow 0.2s, transform 0.2s;
     }
+
     .card:hover {
-      box-shadow: 0 4px 14px rgba(0,0,0,0.13);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.13);
       transform: translateY(-2px);
     }
+
     .card a {
       display: flex;
       align-items: center;
@@ -91,481 +128,541 @@
       text-decoration: none;
       color: inherit;
     }
-    .card-icon { font-size: 1.3rem; margin-right: 0.9rem; flex-shrink: 0; }
-    .card-title { font-size: 0.97rem; font-weight: bold; color: #1a3a5c; line-height: 1.4; }
-    .card-meta { font-size: 0.73rem; color: #aaa; margin-top: 0.15rem; }
-    .card-arrow { color: #ddd; font-size: 1.1rem; margin-left: auto; padding-left: 0.5rem; }
+
+    .card-icon {
+      font-size: 1.3rem;
+      margin-right: 0.9rem;
+      flex-shrink: 0;
+    }
+
+    .card-title {
+      font-size: 0.97rem;
+      font-weight: bold;
+      color: #1a3a5c;
+      line-height: 1.4;
+    }
+
+    .card-meta {
+      font-size: 0.73rem;
+      color: #aaa;
+      margin-top: 0.15rem;
+    }
+
+    .card-arrow {
+      color: #ddd;
+      font-size: 1.1rem;
+      margin-left: auto;
+      padding-left: 0.5rem;
+    }
 
     /* カテゴリ色定義 */
-    .cat-dermatology { color: #c0392b; }
-    .cat-diabetes    { color: #2471a3; }
-    .cat-glaucoma    { color: #1e8449; }
-    .cat-gynecology  { color: #884ea0; }
-    .cat-dementia    { color: #d35400; }
-    .cat-sleep       { color: #2e86c1; }
-    .cat-lifestyle   { color: #7d6608; }
+    .cat-dermatology {
+      color: #c0392b;
+    }
 
-    footer { text-align: center; padding: 2rem; font-size: 0.78rem; color: #bbb; }
+    .cat-diabetes {
+      color: #2471a3;
+    }
+
+    .cat-glaucoma {
+      color: #1e8449;
+    }
+
+    .cat-gynecology {
+      color: #884ea0;
+    }
+
+    .cat-dementia {
+      color: #d35400;
+    }
+
+    .cat-sleep {
+      color: #2e86c1;
+    }
+
+    .cat-lifestyle {
+      color: #7d6608;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.78rem;
+      color: #bbb;
+    }
   </style>
 </head>
+
 <body>
 
-<header>
-  <h1>医療トピック 資料一覧</h1>
-  <p>薬剤・疾患別の患者指導・薬剤師向け資料</p>
-</header>
+  <header>
+    <h1>医療トピック 資料一覧</h1>
+    <p>薬剤・疾患別の患者指導・薬剤師向け資料</p>
+  </header>
 
-<nav>
-  <a href="#dermatology">🩹 皮膚科</a>
-  <a href="#diabetes">💉 糖尿病</a>
-  <a href="#glaucoma">👁️ 緑内障</a>
-  <a href="#gynecology">🌿 婦人科</a>
-  <a href="#dementia">🧠 認知症</a>
-  <a href="#sleep">🌙 睡眠</a>
-  <a href="#lifestyle">🥗 生活習慣病</a>
-</nav>
+  <nav>
+    <a href="#dermatology">🩹 皮膚科</a>
+    <a href="#diabetes">💉 糖尿病</a>
+    <a href="#glaucoma">👁️ 緑内障</a>
+    <a href="#gynecology">🌿 婦人科</a>
+    <a href="#dementia">🧠 認知症</a>
+    <a href="#sleep">🌙 睡眠</a>
+    <a href="#lifestyle">🥗 生活習慣病</a>
+  </nav>
 
-<main>
+  <main>
 
-  <!-- ===== 皮膚科 ===== -->
-  <section class="section cat-dermatology" id="dermatology">
-    <div class="section-header">
-      <span class="section-icon">🩹</span>
-      <span class="section-title">皮膚科</span>
-      <div class="section-count"><span>8</span></div>
-    </div>
-    <div class="card-list">
-
-      <div class="card cat-dermatology">
-        <a href="dermatology/dermatology_oral_meds.html">
-          <span class="card-icon">💊</span>
-          <div>
-            <div class="card-title">皮膚科でよく使用される内服薬まとめ</div>
-            <div class="card-meta">dermatology/dermatology_oral_meds.html</div>
-          </div>
-          <span class="card-arrow">›</span>
-        </a>
+    <!-- ===== 皮膚科 ===== -->
+    <section class="section cat-dermatology" id="dermatology">
+      <div class="section-header">
+        <span class="section-icon">🩹</span>
+        <span class="section-title">皮膚科</span>
+        <div class="section-count"><span>8</span></div>
       </div>
+      <div class="card-list">
 
-      <div class="card cat-dermatology">
-        <a href="dermatology/dermatology_acne_rosacea_oral_meds.html">
-          <span class="card-icon">💊</span>
-          <div>
-            <div class="card-title">ざ瘡・酒皶の内服薬まとめ</div>
-            <div class="card-meta">dermatology/dermatology_acne_rosacea_oral_meds.html</div>
-          </div>
-          <span class="card-arrow">›</span>
-        </a>
+        <div class="card cat-dermatology">
+          <a href="dermatology/dermatology_oral_meds.html">
+            <span class="card-icon">💊</span>
+            <div>
+              <div class="card-title">皮膚科でよく使用される内服薬まとめ</div>
+              <div class="card-meta">dermatology/dermatology_oral_meds.html</div>
+            </div>
+            <span class="card-arrow">›</span>
+          </a>
+        </div>
+
+        <div class="card cat-dermatology">
+          <a href="dermatology/dermatology_acne_rosacea_oral_meds.html">
+            <span class="card-icon">💊</span>
+            <div>
+              <div class="card-title">ざ瘡・酒皶の内服薬まとめ</div>
+              <div class="card-meta">dermatology/dermatology_acne_rosacea_oral_meds.html</div>
+            </div>
+            <span class="card-arrow">›</span>
+          </a>
+        </div>
+
+        <div class="card cat-dermatology">
+          <a href="dermatology/acne_treatment_additional_guidance.html">
+            <span class="card-icon">📋</span>
+            <div>
+              <div class="card-title">ニキビ治療 追加情報・使い方の注意点</div>
+              <div class="card-meta">dermatology/acne_treatment_additional_guidance.html</div>
+            </div>
+            <span class="card-arrow">›</span>
+          </a>
+        </div>
+
+        <div class="card cat-dermatology">
+          <a href="dermatology/dermatology_antifungals.html">
+            <span class="card-icon">🦠</span>
+            <div>
+              <div class="card-title">皮膚科領域で使用される抗真菌薬まとめ</div>
+              <div class="card-meta">dermatology/dermatology_antifungals.html</div>
+            </div>
+            <span class="card-arrow">›</span>
+          </a>
+        </div>
+
+        <div class="card cat-dermatology">
+          <a href="dermatology/dermatology_antivirals.html">
+            <span class="card-icon">🦠</span>
+            <div>
+              <div class="card-title">皮膚科で使用される抗ウイルス薬まとめ</div>
+              <div class="card-meta">dermatology/dermatology_antivirals.html</div>
+            </div>
+            <span class="card-arrow">›</span>
+          </a>
+        </div>
+
+        <div class="card cat-dermatology">
+          <a href="dermatology/antihistamine_antiallergy_dermatology.html">
+            <span class="card-icon">💊</span>
+            <div>
+              <div class="card-title">皮膚科領域で使用される抗ヒスタミン薬・抗アレルギー薬まとめ</div>
+              <div class="card-meta">dermatology/antihistamine_antiallergy_dermatology.html</div>
+            </div>
+            <span class="card-arrow">›</span>
+          </a>
+        </div>
+
+        <div class="card cat-dermatology">
+          <a href="dermatology/psoriasis_ppp_internal_meds.html">
+            <span class="card-icon">💊</span>
+            <div>
+              <div class="card-title">乾癬・掌蹠膿疱症の内服薬</div>
+              <div class="card-meta">dermatology/psoriasis_ppp_internal_meds.html</div>
+            </div>
+            <span class="card-arrow">›</span>
+          </a>
+        </div>
+
+        <div class="card cat-dermatology">
+          <a href="dermatology/dermatology_cosmetic_medicines.html">
+            <span class="card-icon">✨</span>
+            <div>
+              <div class="card-title">皮膚科で使われる美容系医薬品まとめ</div>
+              <div class="card-meta">dermatology/dermatology_cosmetic_medicines.html</div>
+            </div>
+            <span class="card-arrow">›</span>
+          </a>
+        </div>
+
       </div>
+    </section>
 
-      <div class="card cat-dermatology">
-        <a href="dermatology/acne_treatment_additional_guidance.html">
-          <span class="card-icon">📋</span>
-          <div>
-            <div class="card-title">ニキビ治療 追加情報・使い方の注意点</div>
-            <div class="card-meta">dermatology/acne_treatment_additional_guidance.html</div>
-          </div>
-          <span class="card-arrow">›</span>
-        </a>
+    <!-- ===== 糖尿病 ===== -->
+    <section class="section cat-diabetes" id="diabetes">
+      <div class="section-header">
+        <span class="section-icon">💉</span>
+        <span class="section-title">糖尿病</span>
+        <div class="section-count"><span>3</span></div>
       </div>
+      <div class="card-list">
 
-      <div class="card cat-dermatology">
-        <a href="dermatology/dermatology_antifungals.html">
-          <span class="card-icon">🦠</span>
-          <div>
-            <div class="card-title">皮膚科領域で使用される抗真菌薬まとめ</div>
-            <div class="card-meta">dermatology/dermatology_antifungals.html</div>
-          </div>
-          <span class="card-arrow">›</span>
-        </a>
+        <div class="card cat-diabetes">
+          <a href="diabetes/diabetes_injectables_jp_2026.html">
+            <span class="card-icon">💉</span>
+            <div>
+              <div class="card-title">糖尿病の注射剤まとめ（日本・流通製剤ベース）</div>
+              <div class="card-meta">diabetes/diabetes_injectables_jp_2026.html</div>
+            </div>
+            <span class="card-arrow">›</span>
+          </a>
+        </div>
+
+        <div class="card cat-diabetes">
+          <a href="diabetes/diabetes_injection_vs_oral_comparison.html">
+            <span class="card-icon">💊</span>
+            <div>
+              <div class="card-title">糖尿病治療薬：内服薬と注射剤の比較</div>
+              <div class="card-meta">diabetes/diabetes_injection_vs_oral_comparison.html</div>
+            </div>
+            <span class="card-arrow">›</span>
+          </a>
+        </div>
+
+        <div class="card cat-diabetes">
+          <a href="diabetes/diabetes_daily_model.html">
+            <span class="card-icon">📅</span>
+            <div>
+              <div class="card-title">糖尿病向け 1日のモデル生活</div>
+              <div class="card-meta">diabetes/diabetes_daily_model.html</div>
+            </div>
+            <span class="card-arrow">›</span>
+          </a>
+        </div>
+
       </div>
+    </section>
 
-      <div class="card cat-dermatology">
-        <a href="dermatology/dermatology_antivirals.html">
-          <span class="card-icon">🦠</span>
-          <div>
-            <div class="card-title">皮膚科で使用される抗ウイルス薬まとめ</div>
-            <div class="card-meta">dermatology/dermatology_antivirals.html</div>
-          </div>
-          <span class="card-arrow">›</span>
-        </a>
+    <!-- ===== 緑内障 ===== -->
+    <section class="section cat-glaucoma" id="glaucoma">
+      <div class="section-header">
+        <span class="section-icon">👁️</span>
+        <span class="section-title">緑内障</span>
+        <div class="section-count"><span>3</span></div>
       </div>
+      <div class="card-list">
 
-      <div class="card cat-dermatology">
-        <a href="dermatology/antihistamine_antiallergy_dermatology.html">
-          <span class="card-icon">💊</span>
-          <div>
-            <div class="card-title">皮膚科領域で使用される抗ヒスタミン薬・抗アレルギー薬まとめ</div>
-            <div class="card-meta">dermatology/antihistamine_antiallergy_dermatology.html</div>
-          </div>
-          <span class="card-arrow">›</span>
-        </a>
+        <div class="card cat-glaucoma">
+          <a href="glaucoma/glaucoma_guidance.html">
+            <span class="card-icon">👁️</span>
+            <div>
+              <div class="card-title">緑内障 点眼薬 患者指導用まとめ</div>
+              <div class="card-meta">glaucoma/glaucoma_guidance.html</div>
+            </div>
+            <span class="card-arrow">›</span>
+          </a>
+        </div>
+
+        <div class="card cat-glaucoma">
+          <a href="glaucoma/glaucoma_eye_drops_summary.html">
+            <span class="card-icon">💧</span>
+            <div>
+              <div class="card-title">緑内障治療薬と点眼方法まとめ</div>
+              <div class="card-meta">glaucoma/glaucoma_eye_drops_summary.html</div>
+            </div>
+            <span class="card-arrow">›</span>
+          </a>
+        </div>
+
+        <div class="card cat-glaucoma">
+          <a href="glaucoma/glaucoma_counseling_new_pharmacist.html">
+            <span class="card-icon">🩺</span>
+            <div>
+              <div class="card-title">緑内障点眼薬 服薬指導まとめ（新人薬剤師向け）</div>
+              <div class="card-meta">glaucoma/glaucoma_counseling_new_pharmacist.html</div>
+            </div>
+            <span class="card-arrow">›</span>
+          </a>
+        </div>
+
       </div>
+    </section>
 
-      <div class="card cat-dermatology">
-        <a href="dermatology/psoriasis_ppp_internal_meds.html">
-          <span class="card-icon">💊</span>
-          <div>
-            <div class="card-title">乾癬・掌蹠膿疱症の内服薬</div>
-            <div class="card-meta">dermatology/psoriasis_ppp_internal_meds.html</div>
-          </div>
-          <span class="card-arrow">›</span>
-        </a>
+    <!-- ===== 婦人科 ===== -->
+    <section class="section cat-gynecology" id="gynecology">
+      <div class="section-header">
+        <span class="section-icon">🌿</span>
+        <span class="section-title">婦人科</span>
+        <div class="section-count"><span>7</span></div>
       </div>
+      <div class="card-list">
 
-      <div class="card cat-dermatology">
-        <a href="dermatology/dermatology_cosmetic_medicines.html">
-          <span class="card-icon">✨</span>
-          <div>
-            <div class="card-title">皮膚科で使われる美容系医薬品まとめ</div>
-            <div class="card-meta">dermatology/dermatology_cosmetic_medicines.html</div>
-          </div>
-          <span class="card-arrow">›</span>
-        </a>
+        <div class="card cat-gynecology">
+          <a href="gynecology/dysmenorrhea_kampo_and_meds.html">
+            <span class="card-icon">🌿</span>
+            <div>
+              <div class="card-title">生理痛（月経困難症）に使われる漢方薬・鎮痛薬・併用の整理</div>
+              <div class="card-meta">gynecology/dysmenorrhea_kampo_and_meds.html</div>
+            </div>
+            <span class="card-arrow">›</span>
+          </a>
+        </div>
+
+        <div class="card cat-gynecology">
+          <a href="gynecology/emergency_contraception_chart.html">
+            <span class="card-icon">📋</span>
+            <div>
+              <div class="card-title">緊急避妊薬 業務フローチャート</div>
+              <div class="card-meta">gynecology/emergency_contraception_chart.html</div>
+            </div>
+            <span class="card-arrow">›</span>
+          </a>
+        </div>
+
+        <div class="card cat-gynecology">
+          <a href="gynecology/emergency_contraception_topics.html">
+            <span class="card-icon">📄</span>
+            <div>
+              <div class="card-title">婦人科：緊急避妊薬トピックまとめ</div>
+              <div class="card-meta">gynecology/emergency_contraception_topics.html</div>
+            </div>
+            <span class="card-arrow">›</span>
+          </a>
+        </div>
+
+        <div class="card cat-gynecology">
+          <a href="gynecology/ピルに関するFAQ.html">
+            <span class="card-icon">💬</span>
+            <div>
+              <div class="card-title">ピル一般QA・フリウェルLD/ULD比較 FAQ</div>
+              <div class="card-meta">gynecology/ピルに関するFAQ.html</div>
+            </div>
+            <span class="card-arrow">›</span>
+          </a>
+        </div>
+
+        <div class="card cat-gynecology">
+          <a href="gynecology/婦人科_ピル_新人薬剤師向け服薬指導資料.html">
+            <span class="card-icon">🩺</span>
+            <div>
+              <div class="card-title">婦人科 ピル服薬指導・新人薬剤師向け学習資料</div>
+              <div class="card-meta">gynecology/婦人科_ピル_新人薬剤師向け服薬指導資料.html</div>
+            </div>
+            <span class="card-arrow">›</span>
+          </a>
+        </div>
+
+        <div class="card cat-gynecology">
+          <a href="gynecology/婦人科_膣錠の使い方FAQ.html">
+            <span class="card-icon">💬</span>
+            <div>
+              <div class="card-title">婦人科 膣錠の種類・使い方・併用QA</div>
+              <div class="card-meta">gynecology/婦人科_膣錠の使い方FAQ.html</div>
+            </div>
+            <span class="card-arrow">›</span>
+          </a>
+        </div>
+
+        <div class="card cat-gynecology">
+          <a href="gynecology/性感染症に使われる薬.html">
+            <span class="card-icon">💊</span>
+            <div>
+              <div class="card-title">性感染症に使われる薬 まとめ</div>
+              <div class="card-meta">gynecology/性感染症に使われる薬.html</div>
+            </div>
+            <span class="card-arrow">›</span>
+          </a>
+        </div>
+
       </div>
+    </section>
 
-    </div>
-  </section>
-
-  <!-- ===== 糖尿病 ===== -->
-  <section class="section cat-diabetes" id="diabetes">
-    <div class="section-header">
-      <span class="section-icon">💉</span>
-      <span class="section-title">糖尿病</span>
-      <div class="section-count"><span>3</span></div>
-    </div>
-    <div class="card-list">
-
-      <div class="card cat-diabetes">
-        <a href="diabetes/diabetes_injectables_jp_2026.html">
-          <span class="card-icon">💉</span>
-          <div>
-            <div class="card-title">糖尿病の注射剤まとめ（日本・流通製剤ベース）</div>
-            <div class="card-meta">diabetes/diabetes_injectables_jp_2026.html</div>
-          </div>
-          <span class="card-arrow">›</span>
-        </a>
+    <!-- ===== 認知症 ===== -->
+    <section class="section cat-dementia" id="dementia">
+      <div class="section-header">
+        <span class="section-icon">🧠</span>
+        <span class="section-title">認知症</span>
+        <div class="section-count"><span>3</span></div>
       </div>
+      <div class="card-list">
 
-      <div class="card cat-diabetes">
-        <a href="diabetes/diabetes_injection_vs_oral_comparison.html">
-          <span class="card-icon">💊</span>
-          <div>
-            <div class="card-title">糖尿病治療薬：内服薬と注射剤の比較</div>
-            <div class="card-meta">diabetes/diabetes_injection_vs_oral_comparison.html</div>
-          </div>
-          <span class="card-arrow">›</span>
-        </a>
+        <div class="card cat-dementia">
+          <a href="dementia/ninchisho_family_checksheet.html">
+            <span class="card-icon">📋</span>
+            <div>
+              <div class="card-title">認知症が心配なときの家族向けチェックシート</div>
+              <div class="card-meta">dementia/ninchisho_family_checksheet.html</div>
+            </div>
+            <span class="card-arrow">›</span>
+          </a>
+        </div>
+
+        <div class="card cat-dementia">
+          <a href="dementia/dementia_prevention_5_pillars.html">
+            <span class="card-icon">🧠</span>
+            <div>
+              <div class="card-title">認知症予防の基本5本柱</div>
+              <div class="card-meta">dementia/dementia_prevention_5_pillars.html</div>
+            </div>
+            <span class="card-arrow">›</span>
+          </a>
+        </div>
+
+        <div class="card cat-dementia">
+          <a href="dementia/dementia_prevention_daily_model.html">
+            <span class="card-icon">📅</span>
+            <div>
+              <div class="card-title">認知症予防の基本5本柱 1日のモデル生活例</div>
+              <div class="card-meta">dementia/dementia_prevention_daily_model.html</div>
+            </div>
+            <span class="card-arrow">›</span>
+          </a>
+        </div>
+
       </div>
+    </section>
 
-      <div class="card cat-diabetes">
-        <a href="diabetes/diabetes_daily_model.html">
-          <span class="card-icon">📅</span>
-          <div>
-            <div class="card-title">糖尿病向け 1日のモデル生活</div>
-            <div class="card-meta">diabetes/diabetes_daily_model.html</div>
-          </div>
-          <span class="card-arrow">›</span>
-        </a>
+    <!-- ===== 睡眠 ===== -->
+    <section class="section cat-sleep" id="sleep">
+      <div class="section-header">
+        <span class="section-icon">🌙</span>
+        <span class="section-title">睡眠</span>
+        <div class="section-count"><span>6</span></div>
       </div>
+      <div class="card-list">
 
-    </div>
-  </section>
+        <div class="card cat-sleep">
+          <a href="sleep/sleep_routine_pamphlet.html">
+            <span class="card-icon">🌙</span>
+            <div>
+              <div class="card-title">ぐっすり眠るための 夜の黄金ルーティン</div>
+              <div class="card-meta">sleep/sleep_routine_pamphlet.html</div>
+            </div>
+            <span class="card-arrow">›</span>
+          </a>
+        </div>
 
-  <!-- ===== 緑内障 ===== -->
-  <section class="section cat-glaucoma" id="glaucoma">
-    <div class="section-header">
-      <span class="section-icon">👁️</span>
-      <span class="section-title">緑内障</span>
-      <div class="section-count"><span>3</span></div>
-    </div>
-    <div class="card-list">
+        <div class="card cat-sleep">
+          <a href="sleep/sleep_improvement_7_basics.html">
+            <span class="card-icon">💤</span>
+            <div>
+              <div class="card-title">睡眠改善に役立つ基本7つ</div>
+              <div class="card-meta">sleep/sleep_improvement_7_basics.html</div>
+            </div>
+            <span class="card-arrow">›</span>
+          </a>
+        </div>
 
-      <div class="card cat-glaucoma">
-        <a href="glaucoma/glaucoma_guidance.html">
-          <span class="card-icon">👁️</span>
-          <div>
-            <div class="card-title">緑内障 点眼薬 患者指導用まとめ</div>
-            <div class="card-meta">glaucoma/glaucoma_guidance.html</div>
-          </div>
-          <span class="card-arrow">›</span>
-        </a>
+        <div class="card cat-sleep">
+          <a href="sleep/night_waking_causes_and_actions.html">
+            <span class="card-icon">😴</span>
+            <div>
+              <div class="card-title">夜中に目が覚める原因と対策</div>
+              <div class="card-meta">sleep/night_waking_causes_and_actions.html</div>
+            </div>
+            <span class="card-arrow">›</span>
+          </a>
+        </div>
+
+        <div class="card cat-sleep">
+          <a href="sleep/orexin_receptor_antagonists_summary.html">
+            <span class="card-icon">🌃</span>
+            <div>
+              <div class="card-title">オレキシン受容体拮抗薬まとめ</div>
+              <div class="card-meta">sleep/orexin_receptor_antagonists_summary.html</div>
+            </div>
+            <span class="card-arrow">›</span>
+          </a>
+        </div>
+
+        <div class="card cat-sleep">
+          <a href="sleep/sleep_meds_summary.html">
+            <span class="card-icon">💊</span>
+            <div>
+              <div class="card-title">睡眠薬まとめ</div>
+              <div class="card-meta">sleep/sleep_meds_summary.html</div>
+            </div>
+            <span class="card-arrow">›</span>
+          </a>
+        </div>
+
+        <div class="card cat-sleep">
+          <a href="sleep/sleep_quiz.html">
+            <span class="card-icon">❓</span>
+            <div>
+              <div class="card-title">睡眠薬 理解度テスト</div>
+              <div class="card-meta">sleep/sleep_quiz.html</div>
+            </div>
+            <span class="card-arrow">›</span>
+          </a>
+        </div>
+
       </div>
+    </section>
 
-      <div class="card cat-glaucoma">
-        <a href="glaucoma/glaucoma_eye_drops_summary.html">
-          <span class="card-icon">💧</span>
-          <div>
-            <div class="card-title">緑内障治療薬と点眼方法まとめ</div>
-            <div class="card-meta">glaucoma/glaucoma_eye_drops_summary.html</div>
-          </div>
-          <span class="card-arrow">›</span>
-        </a>
+    <!-- ===== 生活習慣病 ===== -->
+    <section class="section cat-lifestyle" id="lifestyle">
+      <div class="section-header">
+        <span class="section-icon">🥗</span>
+        <span class="section-title">生活習慣病</span>
+        <div class="section-count"><span>3</span></div>
       </div>
+      <div class="card-list">
 
-      <div class="card cat-glaucoma">
-        <a href="glaucoma/glaucoma_counseling_new_pharmacist.html">
-          <span class="card-icon">🩺</span>
-          <div>
-            <div class="card-title">緑内障点眼薬 服薬指導まとめ（新人薬剤師向け）</div>
-            <div class="card-meta">glaucoma/glaucoma_counseling_new_pharmacist.html</div>
-          </div>
-          <span class="card-arrow">›</span>
-        </a>
+        <div class="card cat-lifestyle">
+          <a href="lifestyle/lifestyle_disease_improvement_5_basics.html">
+            <span class="card-icon">📋</span>
+            <div>
+              <div class="card-title">生活習慣病を改善する5つの基本</div>
+              <div class="card-meta">lifestyle/lifestyle_disease_improvement_5_basics.html</div>
+            </div>
+            <span class="card-arrow">›</span>
+          </a>
+        </div>
+
+        <div class="card cat-lifestyle">
+          <a href="lifestyle/hypertension_daily_model.html">
+            <span class="card-icon">📅</span>
+            <div>
+              <div class="card-title">高血圧向け 1日のモデル生活</div>
+              <div class="card-meta">lifestyle/hypertension_daily_model.html</div>
+            </div>
+            <span class="card-arrow">›</span>
+          </a>
+        </div>
+
+        <div class="card cat-lifestyle">
+          <a href="lifestyle/high_cholesterol_daily_model.html">
+            <span class="card-icon">📅</span>
+            <div>
+              <div class="card-title">コレステロールが高い人向け 1日のモデル生活</div>
+              <div class="card-meta">lifestyle/high_cholesterol_daily_model.html</div>
+            </div>
+            <span class="card-arrow">›</span>
+          </a>
+        </div>
+
       </div>
+    </section>
 
-    </div>
-  </section>
+  </main>
 
-  <!-- ===== 婦人科 ===== -->
-  <section class="section cat-gynecology" id="gynecology">
-    <div class="section-header">
-      <span class="section-icon">🌿</span>
-      <span class="section-title">婦人科</span>
-      <div class="section-count"><span>7</span></div>
-    </div>
-    <div class="card-list">
-
-      <div class="card cat-gynecology">
-        <a href="gynecology/dysmenorrhea_kampo_and_meds.html">
-          <span class="card-icon">🌿</span>
-          <div>
-            <div class="card-title">生理痛（月経困難症）に使われる漢方薬・鎮痛薬・併用の整理</div>
-            <div class="card-meta">gynecology/dysmenorrhea_kampo_and_meds.html</div>
-          </div>
-          <span class="card-arrow">›</span>
-        </a>
-      </div>
-
-      <div class="card cat-gynecology">
-        <a href="gynecology/emergency_contraception_chart.html">
-          <span class="card-icon">📋</span>
-          <div>
-            <div class="card-title">緊急避妊薬 業務フローチャート</div>
-            <div class="card-meta">gynecology/emergency_contraception_chart.html</div>
-          </div>
-          <span class="card-arrow">›</span>
-        </a>
-      </div>
-
-      <div class="card cat-gynecology">
-        <a href="gynecology/emergency_contraception_topics.html">
-          <span class="card-icon">📄</span>
-          <div>
-            <div class="card-title">婦人科：緊急避妊薬トピックまとめ</div>
-            <div class="card-meta">gynecology/emergency_contraception_topics.html</div>
-          </div>
-          <span class="card-arrow">›</span>
-        </a>
-      </div>
-
-      <div class="card cat-gynecology">
-        <a href="gynecology/ピルに関するFAQ.html">
-          <span class="card-icon">💬</span>
-          <div>
-            <div class="card-title">ピル一般QA・フリウェルLD/ULD比較 FAQ</div>
-            <div class="card-meta">gynecology/ピルに関するFAQ.html</div>
-          </div>
-          <span class="card-arrow">›</span>
-        </a>
-      </div>
-
-      <div class="card cat-gynecology">
-        <a href="gynecology/婦人科_ピル_新人薬剤師向け服薬指導資料.html">
-          <span class="card-icon">🩺</span>
-          <div>
-            <div class="card-title">婦人科 ピル服薬指導・新人薬剤師向け学習資料</div>
-            <div class="card-meta">gynecology/婦人科_ピル_新人薬剤師向け服薬指導資料.html</div>
-          </div>
-          <span class="card-arrow">›</span>
-        </a>
-      </div>
-
-      <div class="card cat-gynecology">
-        <a href="gynecology/婦人科_膣錠の使い方FAQ.html">
-          <span class="card-icon">💬</span>
-          <div>
-            <div class="card-title">婦人科 膣錠の種類・使い方・併用QA</div>
-            <div class="card-meta">gynecology/婦人科_膣錠の使い方FAQ.html</div>
-          </div>
-          <span class="card-arrow">›</span>
-        </a>
-      </div>
-
-      <div class="card cat-gynecology">
-        <a href="gynecology/性感染症に使われる薬.html">
-          <span class="card-icon">💊</span>
-          <div>
-            <div class="card-title">性感染症に使われる薬 まとめ</div>
-            <div class="card-meta">gynecology/性感染症に使われる薬.html</div>
-          </div>
-          <span class="card-arrow">›</span>
-        </a>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ===== 認知症 ===== -->
-  <section class="section cat-dementia" id="dementia">
-    <div class="section-header">
-      <span class="section-icon">🧠</span>
-      <span class="section-title">認知症</span>
-      <div class="section-count"><span>3</span></div>
-    </div>
-    <div class="card-list">
-
-      <div class="card cat-dementia">
-        <a href="dementia/ninchisho_family_checksheet.html">
-          <span class="card-icon">📋</span>
-          <div>
-            <div class="card-title">認知症が心配なときの家族向けチェックシート</div>
-            <div class="card-meta">dementia/ninchisho_family_checksheet.html</div>
-          </div>
-          <span class="card-arrow">›</span>
-        </a>
-      </div>
-
-      <div class="card cat-dementia">
-        <a href="dementia/dementia_prevention_5_pillars.html">
-          <span class="card-icon">🧠</span>
-          <div>
-            <div class="card-title">認知症予防の基本5本柱</div>
-            <div class="card-meta">dementia/dementia_prevention_5_pillars.html</div>
-          </div>
-          <span class="card-arrow">›</span>
-        </a>
-      </div>
-
-      <div class="card cat-dementia">
-        <a href="dementia/dementia_prevention_daily_model.html">
-          <span class="card-icon">📅</span>
-          <div>
-            <div class="card-title">認知症予防の基本5本柱 1日のモデル生活例</div>
-            <div class="card-meta">dementia/dementia_prevention_daily_model.html</div>
-          </div>
-          <span class="card-arrow">›</span>
-        </a>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ===== 睡眠 ===== -->
-  <section class="section cat-sleep" id="sleep">
-    <div class="section-header">
-      <span class="section-icon">🌙</span>
-      <span class="section-title">睡眠</span>
-      <div class="section-count"><span>5</span></div>
-    </div>
-    <div class="card-list">
-
-      <div class="card cat-sleep">
-        <a href="sleep/sleep_routine_pamphlet.html">
-          <span class="card-icon">🌙</span>
-          <div>
-            <div class="card-title">ぐっすり眠るための 夜の黄金ルーティン</div>
-            <div class="card-meta">sleep/sleep_routine_pamphlet.html</div>
-          </div>
-          <span class="card-arrow">›</span>
-        </a>
-      </div>
-
-      <div class="card cat-sleep">
-        <a href="sleep/sleep_improvement_7_basics.html">
-          <span class="card-icon">💤</span>
-          <div>
-            <div class="card-title">睡眠改善に役立つ基本7つ</div>
-            <div class="card-meta">sleep/sleep_improvement_7_basics.html</div>
-          </div>
-          <span class="card-arrow">›</span>
-        </a>
-      </div>
-
-      <div class="card cat-sleep">
-        <a href="sleep/night_waking_causes_and_actions.html">
-          <span class="card-icon">😴</span>
-          <div>
-            <div class="card-title">夜中に目が覚める原因と対策</div>
-            <div class="card-meta">sleep/night_waking_causes_and_actions.html</div>
-          </div>
-          <span class="card-arrow">›</span>
-        </a>
-      </div>
-
-      <div class="card cat-sleep">
-        <a href="sleep/orexin_receptor_antagonists_summary.html">
-          <span class="card-icon">🌃</span>
-          <div>
-            <div class="card-title">オレキシン受容体拮抗薬まとめ</div>
-            <div class="card-meta">sleep/orexin_receptor_antagonists_summary.html</div>
-          </div>
-          <span class="card-arrow">›</span>
-        </a>
-      </div>
-
-      <div class="card cat-sleep">
-        <a href="sleep/sleep_meds_summary.html">
-          <span class="card-icon">💊</span>
-          <div>
-            <div class="card-title">睡眠薬まとめ</div>
-            <div class="card-meta">sleep/sleep_meds_summary.html</div>
-          </div>
-          <span class="card-arrow">›</span>
-        </a>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ===== 生活習慣病 ===== -->
-  <section class="section cat-lifestyle" id="lifestyle">
-    <div class="section-header">
-      <span class="section-icon">🥗</span>
-      <span class="section-title">生活習慣病</span>
-      <div class="section-count"><span>3</span></div>
-    </div>
-    <div class="card-list">
-
-      <div class="card cat-lifestyle">
-        <a href="lifestyle/lifestyle_disease_improvement_5_basics.html">
-          <span class="card-icon">📋</span>
-          <div>
-            <div class="card-title">生活習慣病を改善する5つの基本</div>
-            <div class="card-meta">lifestyle/lifestyle_disease_improvement_5_basics.html</div>
-          </div>
-          <span class="card-arrow">›</span>
-        </a>
-      </div>
-
-      <div class="card cat-lifestyle">
-        <a href="lifestyle/hypertension_daily_model.html">
-          <span class="card-icon">📅</span>
-          <div>
-            <div class="card-title">高血圧向け 1日のモデル生活</div>
-            <div class="card-meta">lifestyle/hypertension_daily_model.html</div>
-          </div>
-          <span class="card-arrow">›</span>
-        </a>
-      </div>
-
-      <div class="card cat-lifestyle">
-        <a href="lifestyle/high_cholesterol_daily_model.html">
-          <span class="card-icon">📅</span>
-          <div>
-            <div class="card-title">コレステロールが高い人向け 1日のモデル生活</div>
-            <div class="card-meta">lifestyle/high_cholesterol_daily_model.html</div>
-          </div>
-          <span class="card-arrow">›</span>
-        </a>
-      </div>
-
-    </div>
-  </section>
-
-</main>
-
-<footer>医療トピック資料集</footer>
+  <footer>医療トピック資料集</footer>
 
 </body>
+
 </html>
