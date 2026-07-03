@@ -75,6 +75,8 @@
 | `sleep_routine_pamphlet.html` | ぐっすり眠るための 夜の黄金ルーティン | 2026-06-09 | |
 | `sleep_improvement_7_basics.html` | 睡眠改善に役立つ基本7つ | 2026-06-10 | (1) 版より統合（NG習慣セクション追加） |
 | `night_waking_causes_and_actions.html` | 夜中に目が覚める原因と対策 | 2026-06-10 | |
+| `orexin_receptor_antagonists_summary.html` | オレキシン受容体拮抗薬まとめ | 2026-07-03 | |
+| `sleep_meds_summary.html` | 睡眠薬まとめ | 2026-07-03 | |
 
 ## 生活習慣病 (`lifestyle/`)
 
