@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>緑内障 理解度確認テスト</title>
+  <style>
+    :root {
+      --bg: #f6f8fb;
+      --card: #fff;
+      --text: #1f2937;
+      --muted: #64748b;
+      --line: #dbe3ee;
+      --blue: #2563eb;
+      --blue2: #eaf1ff;
+      --green: #047857;
+      --green2: #ecfdf5;
+      --red: #b91c1c;
+      --red2: #fef2f2;
+      --amber: #b45309;
+      --amber2: #fff7ed;
+      --shadow: 0 10px 24px rgba(15, 23, 42, .08)
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Sans", "Yu Gothic", sans-serif;
+      background: linear-gradient(180deg, #eaf1ff 0, var(--bg) 260px);
+      color: var(--text);
+      line-height: 1.7
+    }
+
+    .wrap {
+      max-width: 1040px;
+      margin: 32px auto 56px;
+      padding: 0 18px
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #1d4ed8, #4f46e5);
+      color: #fff;
+      border-radius: 24px;
+      padding: 30px;
+      box-shadow: var(--shadow)
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      font-size: 1.9rem;
+      line-height: 1.35
+    }
+
+    h2 {
+      margin: 0 0 14px;
+      font-size: 1.25rem;
+      color: #17365d;
+      border-left: 6px solid var(--blue);
+      padding-left: 12px
+    }
+
+    .hero p {
+      margin: 0;
+      opacity: .95
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 22px;
+      margin-top: 20px;
+      box-shadow: var(--shadow)
+    }
+
+    .meta {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 16px
+    }
+
+    .tag {
+      background: rgba(255, 255, 255, .18);
+      border: 1px solid rgba(255, 255, 255, .35);
+      border-radius: 999px;
+      padding: 7px 12px;
+      font-weight: 700;
+      font-size: .9rem
+    }
+
+    .question {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 18px;
+      margin: 18px 0;
+      background: #fff
+    }
+
+    .qhead {
+      font-weight: 800;
+      color: #17365d;
+      margin-bottom: 10px
+    }
+
+    .qtext {
+      font-weight: 700;
+      margin-bottom: 10px
+    }
+
+    label.option {
+      display: block;
+      margin: 9px 0;
+      padding: 10px 12px;
+      border: 1px solid #e5edf7;
+      border-radius: 12px;
+      background: #fbfdff;
+      cursor: pointer
+    }
+
+    label.option:hover {
+      background: #f3f7ff
+    }
+
+    input[type="checkbox"] {
+      transform: scale(1.15);
+      margin-right: 8px
+    }
+
+    .btns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 18px;
+      position: sticky;
+      bottom: 12px;
+      background: rgba(246, 248, 251, .9);
+      backdrop-filter: blur(8px);
+      padding: 12px;
+      border-radius: 16px;
+      border: 1px solid var(--line)
+    }
+
+    button {
+      border: 0;
+      border-radius: 12px;
+      padding: 12px 18px;
+      font-weight: 800;
+      font-size: 1rem;
+      cursor: pointer
+    }
+
+    #submitBtn {
+      background: var(--blue);
+      color: #fff
+    }
+
+    #resetBtn {
+      background: #e5e7eb;
+      color: #111827
+    }
+
+    .result {
+      display: none
+    }
+
+    .scorebox {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 14px;
+      margin: 14px 0
+    }
+
+    .scoreitem {
+      background: var(--blue2);
+      border: 1px solid #cfe0ff;
+      border-radius: 16px;
+      padding: 16px;
+      text-align: center
+    }
+
+    .scoreitem b {
+      font-size: 1.8rem;
+      color: var(--blue)
+    }
+
+    .review {
+      border-radius: 16px;
+      padding: 15px;
+      margin: 12px 0;
+      border: 1px solid var(--line)
+    }
+
+    .correct {
+      background: var(--green2);
+      border-color: #b7ebd2
+    }
+
+    .wrong {
+      background: var(--red2);
+      border-color: #f4b7b7
+    }
+
+    .partial {
+      background: var(--amber2);
+      border-color: #f2d3aa
+    }
+
+    .badge {
+      display: inline-block;
+      border-radius: 999px;
+      padding: 4px 10px;
+      font-weight: 800;
+      font-size: .86rem;
+      margin-right: 8px
+    }
+
+    .badge.ok {
+      background: #d1fae5;
+      color: var(--green)
+    }
+
+    .badge.ng {
+      background: #fee2e2;
+      color: var(--red)
+    }
+
+    .badge.part {
+      background: #ffedd5;
+      color: var(--amber)
+    }
+
+    .small {
+      font-size: .92rem;
+      color: var(--muted)
+    }
+
+    .answer {
+      font-weight: 800
+    }
+
+    .explain {
+      margin-top: 8px
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px
+    }
+
+    td,
+    th {
+      border: 1px solid var(--line);
+      padding: 10px;
+      text-align: left
+    }
+
+    th {
+      background: #eef4ff;
+      color: #17365d
+    }
+
+    @media(max-width:760px) {
+      .scorebox {
+        grid-template-columns: 1fr
+      }
+
+      .hero {
+        padding: 22px
+      }
+
+      h1 {
+        font-size: 1.5rem
+      }
+
+      .card {
+        padding: 16px
+      }
+
+      .btns {
+        position: static
+      }
+    }
+
+    @media print {
+      body {
+        background: #fff
+      }
+
+      .hero,
+      .card {
+        box-shadow: none
+      }
+
+      .btns {
+        display: none
+      }
+
+      .result {
+        display: block !important
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <h1>緑内障 理解度確認テスト</h1>
+      <p>各問は「正しいものをすべて選ぶ」複数選択式です。1つとは限りません。提出ボタンを押すと、成績表・正解・解説を表示します。</p>
+      <div class="meta"><span class="tag">全10問</span><span class="tag">複数選択可</span><span class="tag">薬剤師学習用</span></div>
+    </section>
+
+    <section class="card">
+      <h2>問題</h2>
+      <form id="quizForm"></form>
+      <div class="btns">
+        <button type="button" id="submitBtn">提出して採点する</button>
+        <button type="button" id="resetBtn">リセット</button>
+      </div>
+    </section>
+
+    <section id="result" class="card result">
+      <h2>成績表</h2>
+      <div class="scorebox">
+        <div class="scoreitem">
+          <div>得点</div><b id="scoreText">0 / 10</b>
+        </div>
+        <div class="scoreitem">
+          <div>正答率</div><b id="percentText">0%</b>
+        </div>
+        <div class="scoreitem">
+          <div>判定</div><b id="rankText">-</b>
+        </div>
+      </div>
+      <p id="comment" class="small"></p>
+      <div id="summaryTable"></div>
+      <h2 style="margin-top:24px">正解と解説</h2>
+      <div id="review"></div>
+    </section>
+  </div>
+
+<script>
+const questions = [
+  {q:'プロスタグランジン関連薬について正しいものを選んでください。',opts:['代表薬にラタノプロスト、タフルプロスト、トラボプロストがある','多くは1日1回使用で、就寝前に指示されることが多い','喘息患者では原則禁忌となるため必ず避ける','まつ毛が伸びる、まぶたや虹彩の色素沈着などを説明する'],ans:[0,1,3],exp:'プロスタグランジン関連薬は房水流出を促進し、眼圧下降効果が強い薬です。色素沈着、睫毛変化などを事前説明します。喘息・徐脈などで特に注意するのは主にβ遮断薬です。'},
+  {q:'β遮断薬点眼の服薬指導で確認すべき事項を選んでください。',opts:['喘息やCOPDの既往','徐脈、心不全などの心疾患','点眼後の涙嚢圧迫を説明する','苦味は主作用なので必ず我慢するよう説明する'],ans:[0,1,2],exp:'チモロールなどのβ遮断薬は全身性に吸収されると気管支収縮、徐脈などのリスクがあります。点眼後に目頭を押さえる涙嚢圧迫は全身移行を減らすうえで重要です。'},
+  {q:'炭酸脱水酵素阻害薬について正しいものを選んでください。',opts:['ドルゾラミド、ブリンゾラミドが代表例である','房水産生を抑制して眼圧を下げる','苦味を訴える患者がいる','通常、1日1回就寝前のみで使用されることが多い'],ans:[0,1,2],exp:'炭酸脱水酵素阻害薬は房水産生を抑える点眼薬です。しみる、苦味などの訴えがあります。用法は製剤により異なりますが、1日2〜3回が多く、PG関連薬のような1日1回就寝前とは限りません。'},
+  {q:'α2刺激薬の指導として適切なものを選んでください。',opts:['代表薬にブリモニジンがある','眠気、倦怠感に注意する','運転や危険作業を行う患者には眠気の可能性を説明する','充血が出たら必ずすぐ中止するよう指導する'],ans:[0,1,2],exp:'ブリモニジンでは眠気、倦怠感、アレルギー性結膜炎などに注意します。副作用が疑われる場合は自己判断で中止せず、医師・薬剤師へ相談するよう指導します。'},
+  {q:'Rhoキナーゼ阻害薬について正しいものを選んでください。',opts:['代表薬にリパスジルがある','線維柱帯流出を促進する','充血が比較的出やすいことを事前に説明する','まつ毛が必ず抜けるため中止が必要である'],ans:[0,1,2],exp:'リパスジルは線維柱帯からの房水流出を促進します。充血が比較的よくみられるため、事前に説明すると自己中断防止につながります。'},
+  {q:'複数の点眼薬を使用する患者への説明として正しいものを選んでください。',opts:['点眼薬同士は原則5分以上間隔をあける','順番が指示されている場合はその順番を守る','一度にまとめて連続点眼すると効果が高まる','点眼後はまばたきを強く繰り返すと全身副作用が減る'],ans:[0,1],exp:'複数点眼では前の薬が洗い流されないよう5分以上あけます。強いまばたきではなく、閉眼と涙嚢圧迫が基本です。'},
+  {q:'緑内障治療におけるアドヒアランス指導として適切なものを選んでください。',opts:['症状がなくても継続が必要であると説明する','視野障害は自覚しにくく、進行すると戻りにくいことを伝える','眼圧が下がったら自己判断で中止してよいと説明する','副作用や使いにくさがあれば相談するよう促す'],ans:[0,1,3],exp:'緑内障は自覚症状が乏しいまま進行することがあります。視野障害は戻りにくいため、継続治療が重要です。中止したい場合は自己判断ではなく相談につなげます。'},
+  {q:'配合剤について正しいものを選んでください。',opts:['点眼本数や回数を減らし、アドヒアランス改善に役立つことがある','含まれる成分それぞれの副作用や禁忌に注意する','配合剤なら副作用は単剤より必ず少ない','β遮断薬を含む配合剤では喘息・心疾患の確認が必要である'],ans:[0,1,3],exp:'配合剤は点眼負担を減らせますが、含有成分の副作用・禁忌は残ります。β遮断薬含有なら喘息、COPD、徐脈などの確認が必要です。'},
+  {q:'点眼手技の説明として正しいものを選んでください。',opts:['点眼前に手を洗う','容器の先端がまつ毛や眼に触れないようにする','点眼後は1分程度、目頭を軽く押さえるとよい','入らなかった気がした場合は何滴でも追加してよい'],ans:[0,1,2],exp:'手洗い、容器先端を触れさせないこと、閉眼・涙嚢圧迫が基本です。過量点眼は副作用や薬液消費につながるため、必要時は指示に従い、心配なら相談します。'},
+  {q:'新人薬剤師の患者対応として適切なものを選んでください。',opts:['色素沈着など見た目の変化は患者が不安になりやすいため、発現しうる副作用として説明する','副作用を説明すると不安になるため、原則として一切説明しない','『症状がないなら中止してもよい』と患者の判断に任せる','副作用説明では、よくある症状・相談すべき症状を分けて伝える'],ans:[0,3],exp:'副作用説明は不安をあおるためではなく、自己中断やトラブルを防ぐために行います。よくある症状と、医療者へ相談すべき症状を整理して伝えることが大切です。'}
+];
+
+const form = document.getElementById('quizForm');
+
+function letters(arr) {
+  return arr.map(i => String.fromCharCode(65 + i)).join('、');
+}
+
+function same(a, b) {
+  return a.length === b.length && a.every(x => b.includes(x));
+}
+
+function partial(a, b) {
+  return a.some(x => b.includes(x)) || b.some(x => a.includes(x));
+}
+
+questions.forEach((item, qi) => {
+  const div = document.createElement('div');
+  div.className = 'question';
+  div.innerHTML = `<div class="qhead">第${qi + 1}問</div><div class="qtext">${item.q}</div>`;
+  item.opts.forEach((op, oi) => {
+    const id = `q${qi}_${oi}`;
+    div.innerHTML += `<label class="option" for="${id}"><input type="checkbox" id="${id}" name="q${qi}" value="${oi}">${String.fromCharCode(65 + oi)}. ${op}</label>`;
+  });
+  form.appendChild(div);
+});
+
+function grade() {
+  let score = 0;
+  let rows = '';
+  let review = '';
+
+  questions.forEach((item, qi) => {
+    const selected = [...document.querySelectorAll(`input[name="q${qi}"]:checked`)].map(e => Number(e.value));
+    const ok = same(selected, item.ans);
+    if (ok) score++;
+
+    const cls = ok ? 'correct' : (partial(selected, item.ans) ? 'partial' : 'wrong');
+    const badge = ok ? '<span class="badge ok">正解</span>' : (partial(selected, item.ans) ? '<span class="badge part">一部正解</span>' : '<span class="badge ng">不正解</span>');
+    rows += `<tr><td>第${qi + 1}問</td><td>${ok ? '正解' : (partial(selected, item.ans) ? '一部正解' : '不正解')}</td><td>あなたの選択：${selected.length ? letters(selected) : '未選択'}</td><td>正解：${letters(item.ans)}</td></tr>`;
+    review += `<div class="review ${cls}">${badge}<strong>第${qi + 1}問</strong><div class="answer">正解：${letters(item.ans)}</div><div>あなたの選択：${selected.length ? letters(selected) : '未選択'}</div><div class="explain">${item.exp}</div></div>`;
+  });
+
+  const pct = Math.round(score / questions.length * 100);
+  document.getElementById('scoreText').textContent = `${score} / ${questions.length}`;
+  document.getElementById('percentText').textContent = `${pct}%`;
+  document.getElementById('rankText').textContent = pct >= 90 ? 'A' : pct >= 70 ? 'B' : pct >= 50 ? 'C' : 'D';
+  document.getElementById('comment').textContent = pct >= 90 ? 'よく理解できています。実務では併用薬と患者背景の確認まで意識してください。' : pct >= 70 ? '概ね理解できています。間違えた問題の解説を確認してください。' : pct >= 50 ? '基本は押さえていますが、作用機序と併用注意を再確認してください。' : '再学習が必要です。まず作用機序、薬剤名、服薬指導の3点を整理してください。';
+  document.getElementById('summaryTable').innerHTML = `<table><thead><tr><th>問題</th><th>判定</th><th>選択</th><th>正解</th></tr></thead><tbody>${rows}</tbody></table>`;
+  document.getElementById('review').innerHTML = review;
+  document.getElementById('result').style.display = 'block';
+  document.getElementById('result').scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+document.getElementById('submitBtn').addEventListener('click', grade);
+document.getElementById('resetBtn').addEventListener('click', () => {
+  document.querySelectorAll('input[type="checkbox"]').forEach(e => e.checked = false);
+  document.getElementById('result').style.display = 'none';
+  window.scrollTo({top:0,behavior:'smooth'});
+});
+</script>
+</body>
+</html>
