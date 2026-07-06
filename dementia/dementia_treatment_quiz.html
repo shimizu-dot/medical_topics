@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>認知症治療薬 理解度テスト</title>
+  <style>
+    :root {
+      --bg: #f6f8fb;
+      --card: #fff;
+      --text: #1f2937;
+      --muted: #64748b;
+      --line: #dbe3ee;
+      --blue: #2563eb;
+      --blue2: #eaf1ff;
+      --green: #047857;
+      --green2: #ecfdf5;
+      --red: #b91c1c;
+      --red2: #fef2f2;
+      --amber: #b45309;
+      --amber2: #fff7ed;
+      --shadow: 0 10px 24px rgba(15, 23, 42, .08)
+    }
+
+    * { box-sizing: border-box }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Sans", "Yu Gothic", sans-serif;
+      background: linear-gradient(180deg, #fff4e8 0, var(--bg) 260px);
+      color: var(--text);
+      line-height: 1.7
+    }
+
+    .wrap {
+      max-width: 1040px;
+      margin: 32px auto 56px;
+      padding: 0 18px
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #c2410c, #7c3aed);
+      color: #fff;
+      border-radius: 24px;
+      padding: 30px;
+      box-shadow: var(--shadow)
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      font-size: 1.9rem;
+      line-height: 1.35
+    }
+
+    h2 {
+      margin: 0 0 14px;
+      font-size: 1.25rem;
+      color: #6b2d12;
+      border-left: 6px solid #c2410c;
+      padding-left: 12px
+    }
+
+    .hero p { margin: 0; opacity: .95 }
+
+    .meta {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 16px
+    }
+
+    .tag {
+      background: rgba(255, 255, 255, .16);
+      border: 1px solid rgba(255, 255, 255, .28);
+      border-radius: 999px;
+      padding: 7px 12px;
+      font-weight: 700;
+      font-size: .9rem
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 22px;
+      margin-top: 20px;
+      box-shadow: var(--shadow)
+    }
+
+    .question {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 18px;
+      margin: 18px 0;
+      background: #fff
+    }
+
+    .qhead {
+      font-weight: 800;
+      color: #6b2d12;
+      margin-bottom: 10px
+    }
+
+    .qtext { font-weight: 700; margin-bottom: 10px }
+
+    label.option {
+      display: block;
+      margin: 9px 0;
+      padding: 10px 12px;
+      border: 1px solid #e5edf7;
+      border-radius: 12px;
+      background: #fbfdff;
+      cursor: pointer
+    }
+
+    label.option:hover { background: #fff7ef }
+
+    input[type="checkbox"] {
+      transform: scale(1.15);
+      margin-right: 8px
+    }
+
+    .btns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 18px;
+      position: sticky;
+      bottom: 12px;
+      background: rgba(246, 248, 251, .92);
+      backdrop-filter: blur(8px);
+      padding: 12px;
+      border-radius: 16px;
+      border: 1px solid var(--line)
+    }
+
+    button {
+      border: 0;
+      border-radius: 12px;
+      padding: 12px 18px;
+      font-weight: 800;
+      font-size: 1rem;
+      cursor: pointer
+    }
+
+    #submitBtn { background: #c2410c; color: #fff }
+    #resetBtn { background: #e5e7eb; color: #111827 }
+
+    .result { display: none }
+
+    .scorebox {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 14px;
+      margin: 14px 0
+    }
+
+    .scoreitem {
+      background: var(--blue2);
+      border: 1px solid #cfe0ff;
+      border-radius: 16px;
+      padding: 16px;
+      text-align: center
+    }
+
+    .scoreitem b {
+      font-size: 1.8rem;
+      color: var(--blue)
+    }
+
+    .review {
+      border-radius: 16px;
+      padding: 15px;
+      margin: 12px 0;
+      border: 1px solid var(--line)
+    }
+
+    .correct { background: var(--green2); border-color: #b7ebd2 }
+    .wrong { background: var(--red2); border-color: #f4b7b7 }
+    .partial { background: var(--amber2); border-color: #f2d3aa }
+
+    .badge {
+      display: inline-block;
+      border-radius: 999px;
+      padding: 4px 10px;
+      font-weight: 800;
+      font-size: .86rem;
+      margin-right: 8px
+    }
+
+    .badge.ok { background: #d1fae5; color: var(--green) }
+    .badge.ng { background: #fee2e2; color: var(--red) }
+    .badge.part { background: #ffedd5; color: var(--amber) }
+
+    .small { font-size: .92rem; color: var(--muted) }
+    .answer { font-weight: 800 }
+    .explain { margin-top: 8px }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px
+    }
+
+    td, th {
+      border: 1px solid var(--line);
+      padding: 10px;
+      text-align: left
+    }
+
+    th {
+      background: #eef4ff;
+      color: #17365d
+    }
+
+    @media(max-width:760px) {
+      .scorebox { grid-template-columns: 1fr }
+      .hero { padding: 22px }
+      h1 { font-size: 1.5rem }
+      .card { padding: 16px }
+      .btns { position: static }
+    }
+
+    @media print {
+      body { background: #fff }
+      .hero, .card { box-shadow: none }
+      .btns { display: none }
+      .result { display: block !important }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <h1>認知症治療薬 理解度テスト</h1>
+      <p>各問は「正しいものをすべて選ぶ」または「間違ったものをすべて選ぶ」複数選択式です。提出ボタンを押すと、成績表・正解・解説を表示します。</p>
+      <div class="meta">
+        <span class="tag">全10問</span>
+        <span class="tag">複数選択式</span>
+        <span class="tag">薬剤師学習用</span>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>問題</h2>
+      <form id="quizForm"></form>
+      <div class="btns">
+        <button type="button" id="submitBtn">提出して採点する</button>
+        <button type="button" id="resetBtn">リセット</button>
+      </div>
+    </section>
+
+    <section id="result" class="card result">
+      <h2>成績表</h2>
+      <div class="scorebox">
+        <div class="scoreitem"><div>得点</div><b id="scoreText">0 / 10</b></div>
+        <div class="scoreitem"><div>正答率</div><b id="percentText">0%</b></div>
+        <div class="scoreitem"><div>判定</div><b id="rankText">-</b></div>
+      </div>
+      <p id="comment" class="small"></p>
+      <div id="summaryTable"></div>
+      <h2 style="margin-top:24px">正解と解説</h2>
+      <div id="review"></div>
+    </section>
+  </div>
+
+  <script>
+    const questions = [
+      {
+        q: 'コリンエステラーゼ阻害薬（ドネペジル、ガランタミン、リバスチグミン）について正しいものをすべて選びなさい。',
+        opts: [
+          '悪心、嘔吐、下痢、食欲低下などの消化器症状が出ることがある',
+          '服薬中は体重減少がないか確認する',
+          '胃腸症状が強いときは、自己判断で続けず処方元に相談する',
+          '便秘が最も起こりやすいので、下痢はあまり気にしなくてよい',
+          '食事量や水分摂取が落ちていないかも声かけする'
+        ],
+        ans: [0, 1, 2, 4],
+        exp: 'A、B、C、Eが正しいです。コリンエステラーゼ阻害薬では消化器症状が比較的よくみられるため、食欲低下や体重減少、脱水の有無を確認します。Dは誤りで、便秘よりも下痢や悪心に注意が必要です。'
+      },
+      {
+        q: 'コリンエステラーゼ阻害薬の服薬確認として間違ったものをすべて選びなさい。',
+        opts: [
+          '脈が遅い、失神する、めまいがあるときは確認が必要である',
+          '心拍数が遅い患者や房室ブロックがある患者では注意する',
+          '胃・十二指腸潰瘍の既往がある場合も症状確認が大切である',
+          '喘息やCOPDがある患者では必ず禁忌で、使うべきではない',
+          '転倒歴がある患者では、ふらつきの有無を確認する'
+        ],
+        ans: [3],
+        exp: 'Dが誤りです。喘息やCOPDがあるからといって必ず禁忌とは限らず、症状や処方意図を確認する必要があります。A、B、C、Eは、実務で確認したい重要な観察ポイントです。'
+      },
+      {
+        q: 'リバスチグミン貼付剤について正しいものをすべて選びなさい。',
+        opts: [
+          '1日1回、貼り替える',
+          '前日の貼付剤をはがしてから新しいものを貼る',
+          '同じ部位に続けて貼っても皮膚トラブルは少ない',
+          '貼付部位の赤み、かぶれ、かゆみを確認する',
+          '貼付部位は毎回少しずつ変える'
+        ],
+        ans: [0, 1, 3, 4],
+        exp: 'A、B、D、Eが正しいです。リバスチグミン貼付剤は1日1回の貼り替えで、同じ場所に続けて貼らず、皮膚状態を確認しながら部位を回します。Cは誤りで、同じ部位への連続貼付は皮膚トラブルの原因になります。'
+      },
+      {
+        q: 'メマンチンについて正しいものをすべて選びなさい。',
+        opts: [
+          '中等度から高度の認知症で使われることが多い',
+          '腎機能低下があるときは用量や使い方を確認する',
+          'めまい、眠気、便秘、幻覚などに注意する',
+          'コリンエステラーゼ阻害薬と同じく下痢が必発である',
+          '効果判定は急がず、生活の変化も含めてみる'
+        ],
+        ans: [0, 1, 2, 4],
+        exp: 'A、B、C、Eが正しいです。メマンチンは中等度から高度の認知症で使われることが多く、腎機能の確認が重要です。副作用としてはめまい、眠気、便秘、幻覚などに注意します。Dは誤りで、下痢が必発というわけではありません。'
+      },
+      {
+        q: 'レビー小体型認知症について間違ったものをすべて選びなさい。',
+        opts: [
+          '幻視や症状の日内変動がみられることがある',
+          'パーキンソン症状がある場合は薬剤選択に注意する',
+          '抗精神病薬は必要時でも慎重に扱う',
+          'ハロペリドールなどの定型抗精神病薬は、通常どおり安心して使いやすい',
+          'ふらつき、転倒、便秘も確認したい'
+        ],
+        ans: [3],
+        exp: 'Dが誤りです。レビー小体型認知症では抗精神病薬に過敏なことがあり、特に定型抗精神病薬は慎重な扱いが必要です。A、B、C、Eは正しい内容です。'
+      },
+      {
+        q: '認知症治療薬とあわせて確認したい相互作用・併用上の注意として正しいものをすべて選びなさい。',
+        opts: [
+          '市販のかぜ薬や抗ヒスタミン薬は、眠気やせん妄を悪化させることがある',
+          '抗コリン作用の強い薬は、便秘や尿閉、認知機能悪化を起こしうる',
+          '受診時は処方薬だけでなく、OTC薬やサプリメントも確認する',
+          'かぜ薬を飲んでいるかどうかは聞かなくてよい',
+          'お薬手帳や家族からの情報が役立つ'
+        ],
+        ans: [0, 1, 2, 4],
+        exp: 'A、B、C、Eが正しいです。市販のかぜ薬や抗ヒスタミン薬、抗コリン作用の強い薬は、認知機能や排尿、便秘に影響します。Dは誤りで、OTC薬の確認は実務上とても重要です。'
+      },
+      {
+        q: '認知症の患者さんへの服薬支援として正しいものをすべて選びなさい。',
+        opts: [
+          '飲み忘れ対策として一包化や服薬カレンダーが役立つ',
+          '本人だけでなく家族や介護者にも説明する',
+          '飲み忘れたら次回に2回分まとめて飲む',
+          '嚥下しづらさがあるか確認する',
+          '実際に飲めているか、残薬や服薬状況を確認する'
+        ],
+        ans: [0, 1, 3, 4],
+        exp: 'A、B、D、Eが正しいです。認知症では服薬支援が重要で、一包化や服薬カレンダー、家族への説明、嚥下確認、残薬確認が役立ちます。Cは誤りで、飲み忘れ時に2回分まとめて飲むのは避けます。'
+      },
+      {
+        q: '認知症の症状が急に悪化した患者への対応として正しいものをすべて選びなさい。',
+        opts: [
+          '急に混乱が強くなった場合は、認知症の進行だけでなくせん妄も考える',
+          '発熱、脱水、食欲低下、便秘、尿路感染は悪化要因になりうる',
+          'いつもと違う急な変化は、受診勧奨の目安になる',
+          '急な変化でも様子見でよいことが多い',
+          '服薬拒否の背景に、飲み込みづらさや副作用がないか確認する'
+        ],
+        ans: [0, 1, 2, 4],
+        exp: 'A、B、C、Eが正しいです。急な混乱や悪化は、せん妄、感染、脱水、便秘などが隠れていることがあります。Dは誤りで、急な変化は様子見にせず受診勧奨を考えます。'
+      },
+      {
+        q: '認知症治療薬に関する説明として間違ったものをすべて選びなさい。',
+        opts: [
+          '認知症治療薬は症状を和らげる薬で、病気を根本的に治すわけではない',
+          '効果判定にはある程度時間がかかる',
+          '効果が乏しく見えても、自己判断で中止しないよう案内する',
+          '服用後すぐに劇的な改善がないなら、薬が無効と考えてよい',
+          '患者本人だけでなく家族の観察も評価に役立つ'
+        ],
+        ans: [3],
+        exp: 'Dが誤りです。認知症治療薬は症状の進行を抑えたり、認知機能を支えたりする薬で、服用後すぐの劇的な改善を期待しすぎないことが大切です。A、B、C、Eは正しい内容です。'
+      },
+      {
+        q: '認知症治療薬の服薬指導で正しいものをすべて選びなさい。',
+        opts: [
+          '食欲低下、体重減少、ふらつきがないかを確認する',
+          '便秘や排尿トラブル、口渇の有無も確認する',
+          '転倒歴や歩行の不安定さは重要な確認ポイントである',
+          '眠気が出るので服薬後は運転を勧める',
+          '服薬状況や飲み忘れの有無を確認する'
+        ],
+        ans: [0, 1, 2, 4],
+        exp: 'A、B、C、Eが正しいです。認知症治療薬では、食欲低下や体重減少、便秘、排尿トラブル、転倒リスク、飲み忘れの確認が実務上重要です。Dは誤りで、眠気やふらつきがある場合に運転を勧めるべきではありません。'
+      }
+    ];
+
+    const form = document.getElementById('quizForm');
+    function letters(arr) { return arr.map(i => String.fromCharCode(65 + i)).join('、'); }
+    function same(a, b) { return a.length === b.length && a.every(x => b.includes(x)); }
+    function partial(a, b) { return a.some(x => b.includes(x)) || b.some(x => a.includes(x)); }
+    function shuffle(arr) {
+      const copy = arr.slice();
+      for (let i = copy.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [copy[i], copy[j]] = [copy[j], copy[i]];
+      }
+      return copy;
+    }
+
+    questions.forEach((item, qi) => {
+      const div = document.createElement('div');
+      div.className = 'question';
+      div.innerHTML = `<div class="qhead">第${qi + 1}問</div><div class="qtext">${item.q}</div>`;
+      const shuffledOpts = shuffle(item.opts.map((op, oi) => ({ text: op, originalIndex: oi })));
+      shuffledOpts.forEach((choice, oi) => {
+        const id = `q${qi}_${oi}`;
+        div.innerHTML += `<label class="option" for="${id}"><input type="checkbox" id="${id}" name="q${qi}" value="${choice.originalIndex}">${String.fromCharCode(65 + oi)}. ${choice.text}</label>`;
+      });
+      form.appendChild(div);
+    });
+
+    function grade() {
+      let score = 0, rows = '', review = '';
+      questions.forEach((item, qi) => {
+        const selected = [...document.querySelectorAll(`input[name="q${qi}"]:checked`)].map(e => Number(e.value));
+        const ok = same(selected, item.ans); if (ok) score++;
+        const cls = ok ? 'correct' : (partial(selected, item.ans) ? 'partial' : 'wrong');
+        const badge = ok ? '<span class="badge ok">正解</span>' : (partial(selected, item.ans) ? '<span class="badge part">一部正解</span>' : '<span class="badge ng">不正解</span>');
+        rows += `<tr><td>第${qi + 1}問</td><td>${ok ? '正解' : (partial(selected, item.ans) ? '一部正解' : '不正解')}</td><td>あなたの選択：${selected.length ? letters(selected) : '未選択'}</td><td>正解：${letters(item.ans)}</td></tr>`;
+        review += `<div class="review ${cls}">${badge}<strong>第${qi + 1}問</strong><div class="answer">正解：${letters(item.ans)}</div><div>あなたの選択：${selected.length ? letters(selected) : '未選択'}</div><div class="explain">${item.exp}</div></div>`;
+      });
+      const pct = Math.round(score / questions.length * 100);
+      document.getElementById('scoreText').textContent = `${score} / ${questions.length}`;
+      document.getElementById('percentText').textContent = `${pct}%`;
+      document.getElementById('rankText').textContent = pct >= 90 ? 'A' : pct >= 70 ? 'B' : pct >= 50 ? 'C' : 'D';
+      document.getElementById('comment').textContent = pct >= 90 ? 'よく理解できています。家族支援や急変時の見極めまで意識してください。' : pct >= 70 ? '概ね理解できています。間違えた問題の解説を確認してください。' : pct >= 50 ? '基本は押さえていますが、副作用と相互作用を再確認してください。' : '再学習が必要です。まず代表薬、貼付剤、急変時対応の3点を整理してください。';
+      document.getElementById('summaryTable').innerHTML = `<table><thead><tr><th>問題</th><th>判定</th><th>選択</th><th>正解</th></tr></thead><tbody>${rows}</tbody></table>`;
+      document.getElementById('review').innerHTML = review;
+      document.getElementById('result').style.display = 'block';
+      document.getElementById('result').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    document.getElementById('submitBtn').addEventListener('click', grade);
+    document.getElementById('resetBtn').addEventListener('click', () => {
+      document.querySelectorAll('input[type="checkbox"]').forEach(e => e.checked = false);
+      document.getElementById('result').style.display = 'none';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+</body>
+
+</html>

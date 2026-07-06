@@ -10,10 +10,10 @@
 | カテゴリ ID | 表示名 | フォルダ | アイコン | 色コード | 件数 |
 |------------|--------|----------|----------|---------|------|
 | dermatology | 皮膚科 | `dermatology/` | 🩹 | `#c0392b` | 8 |
-| diabetes | 糖尿病 | `diabetes/` | 💉 | `#2471a3` | 3 |
+| diabetes | 糖尿病 | `diabetes/` | 💉 | `#2471a3` | 4 |
 | glaucoma | 緑内障 | `glaucoma/` | 👁️ | `#1e8449` | 3 |
 | gynecology | 婦人科 | `gynecology/` | 🌿 | `#884ea0` | 7 |
-| dementia | 認知症 | `dementia/` | 🧠 | `#d35400` | 3 |
+| dementia | 認知症 | `dementia/` | 🧠 | `#d35400` | 4 |
 | sleep | 睡眠 | `sleep/` | 🌙 | `#2e86c1` | 3 |
 | lifestyle | 生活習慣病 | `lifestyle/` | 🥗 | `#7d6608` | 3 |
 
@@ -39,6 +39,7 @@
 | `diabetes_injectables_jp_2026.html` | 糖尿病の注射剤まとめ（日本・流通製剤ベース） | 2026-06-09 | |
 | `diabetes_injection_vs_oral_comparison.html` | 糖尿病治療薬：内服薬と注射剤の比較 | 2026-06-09 | |
 | `diabetes_daily_model.html` | 糖尿病向け 1日のモデル生活 | 2026-06-10 | |
+| `diabetes_treatment_quiz.html` | 糖尿病治療薬 練習問題 | 2026-07-06 | 問題と解説を表示するHTML版 |
 
 ## 緑内障 (`glaucoma/`)
 
@@ -67,6 +68,7 @@
 | `ninchisho_family_checksheet.html` | 認知症が心配なときの家族向けチェックシート | 2026-06-09 | |
 | `dementia_prevention_5_pillars.html` | 認知症予防の基本5本柱 | 2026-06-10 | |
 | `dementia_prevention_daily_model.html` | 認知症予防の基本5本柱 1日のモデル生活例 | 2026-06-10 | |
+| `dementia_treatment_quiz.html` | 認知症治療薬 練習問題 | 2026-07-06 | 提出ボタンで採点・解説表示、選択肢はランダム表示 |
 
 ## 睡眠 (`sleep/`)
 
